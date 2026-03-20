@@ -4,6 +4,7 @@ import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import InteractiveBackground from '@/components/InteractiveBackground';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -27,8 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-zinc-50 text-zinc-950 min-h-screen flex flex-col selection:bg-zinc-950 selection:text-white bg-grid-pattern relative`}>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-50 pointer-events-none" />
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased text-zinc-950 min-h-screen flex flex-col selection:bg-zinc-950 selection:text-white relative bg-transparent`}>
+        <InteractiveBackground />
         <SmoothScroll>
           <Navbar />
           <main className="flex-1 w-full flex flex-col items-center">

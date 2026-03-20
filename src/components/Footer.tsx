@@ -14,6 +14,7 @@ export function Footer() {
           <div className="flex gap-6 font-mono text-sm text-zinc-400">
             <a href="https://www.linkedin.com/in/amineagnaou/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
             <a href="https://github.com/aminuw" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>
           </div>
           <p className="text-zinc-500 font-mono text-xs text-center md:text-right">
             © {new Date().getFullYear()} Amine AGNAOU. <br className="md:hidden" />

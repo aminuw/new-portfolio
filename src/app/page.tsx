@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -13,35 +16,67 @@ export default function Home() {
         </div>
 
         <div className="text-center">
-          <h1 className="text-[12vw] md:text-[9vw] leading-[0.85] font-playfair font-bold text-zinc-950 tracking-tighter mb-8">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-[12vw] md:text-[9vw] leading-[0.85] font-playfair font-bold text-zinc-950 tracking-tighter mb-8"
+          >
             Amine <br />
             <span className="italic font-light">Agnaou.</span>
-          </h1>
-          <p className="font-mono text-sm md:text-base text-zinc-600 max-w-lg mx-auto uppercase tracking-wider mb-12">
-            Développeur Front-end & Mobile passionné par la création d&apos;expériences claires et performantes.
-          </p>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="font-mono text-sm md:text-base text-zinc-600 max-w-lg mx-auto uppercase tracking-wider mb-12"
+          >
+            Je transforme vos concepts en applications web et mobiles fluides et premium.
+          </motion.p>
           
-          <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-zinc-950 text-white rounded-full text-sm font-medium tracking-wide hover:scale-105 transition-transform duration-300">
-            Démarrer un projet
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-zinc-950 text-white rounded-full text-sm font-medium tracking-wide hover:scale-105 transition-transform duration-300">
+              Démarrer un projet
+            </Link>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
       <section className="py-32 px-4 md:px-12 max-w-7xl mx-auto">
         <h2 className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-16">Expertise.</h2>
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-zinc-950 tracking-tight mb-6">
+            Je construis des écosystèmes digitaux remarquables.
+          </h2>
+          <p className="font-mono text-sm md:text-base text-zinc-600 max-w-2xl leading-relaxed">
+            Au-delà du code et du design, je conçois des interfaces immersives. Mon approche fusionne rigueur technique et sensibilité esthétique pour créer des plateformes modernes.
+          </p>
+        </div>
         
         <div className="flex flex-col border-t border-zinc-200">
           {[
-            { id: '01', title: 'Développement Frontend', desc: 'React, Next.js, Animations complexes.' },
-            { id: '02', title: 'Design d\'Interfaces', desc: 'UI/UX Design, Typographie, Minimalisme.' },
-            { id: '03', title: 'Performances Web', desc: 'Optimisation SEO, Accessibilité.' },
-          ].map((service) => (
-            <div key={service.id} className="group flex flex-col md:flex-row md:items-center py-8 border-b border-zinc-200 hover:bg-zinc-100/50 transition-colors px-4 cursor-default">
+            { id: '01', title: 'Stratégie', desc: 'Audit UX/UI, Architecture Front-end, Scalabilité' },
+            { id: '02', title: 'Design', desc: 'Design System, UI/UX Mobile, Micro-interactions' },
+            { id: '03', title: 'Engineering', desc: 'React & Next.js, React Native, Systèmes Temps Réel' },
+            { id: '04', title: 'Performances', desc: 'SEO Technique, Web Core Vitals, Accessibilité' },
+          ].map((service, idx) => (
+            <motion.div 
+              key={service.id} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="group flex flex-col md:flex-row md:items-center py-8 border-b border-zinc-200 hover:bg-zinc-100/50 transition-colors px-4 cursor-default"
+            >
               <span className="font-mono text-zinc-400 w-16 text-sm">{service.id}</span>
               <h3 className="font-playfair text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 flex-1 group-hover:italic transition-all duration-500">{service.title}</h3>
               <p className="font-mono text-sm text-zinc-600 mt-4 md:mt-0 max-w-sm">{service.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -60,7 +95,14 @@ export default function Home() {
             { title: 'E-commerce Premium', tags: ['NEXT.JS', 'STRIPE'] },
             { title: 'Dashboard Analytics', tags: ['REACT', 'TAILWIND'] },
           ].map((project, idx) => (
-            <div key={idx} className="group flex flex-col md:flex-row gap-8 items-center cursor-pointer">
+            <motion.div 
+              key={idx} 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="group flex flex-col md:flex-row gap-8 items-center cursor-pointer"
+            >
               <div className="w-full md:w-3/5 aspect-video bg-zinc-200 rounded-lg overflow-hidden relative">
                 <div className="absolute inset-0 bg-zinc-300 group-hover:scale-105 transition-transform duration-700 ease-out" />
               </div>
@@ -76,7 +118,7 @@ export default function Home() {
                   {project.title}
                 </h3>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
