@@ -16,7 +16,7 @@ export default function Home() {
         </div>
 
         <div className="text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -25,7 +25,7 @@ export default function Home() {
             Amine <br />
             <span className="italic font-light">Agnaou.</span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -33,7 +33,7 @@ export default function Home() {
           >
             Je transforme vos concepts en applications web et mobiles fluides et premium.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -57,7 +57,7 @@ export default function Home() {
             Au-delà du code et du design, je conçois des interfaces immersives. Mon approche fusionne rigueur technique et sensibilité esthétique pour créer des plateformes modernes.
           </p>
         </div>
-        
+
         <div className="flex flex-col border-t border-zinc-200">
           {[
             { id: '01', title: 'Stratégie', desc: 'Audit UX/UI, Architecture Front-end, Scalabilité' },
@@ -65,8 +65,8 @@ export default function Home() {
             { id: '03', title: 'Engineering', desc: 'React & Next.js, React Native, Systèmes Temps Réel' },
             { id: '04', title: 'Performances', desc: 'SEO Technique, Web Core Vitals, Accessibilité' },
           ].map((service, idx) => (
-            <motion.div 
-              key={service.id} 
+            <motion.div
+              key={service.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -95,8 +95,8 @@ export default function Home() {
             { title: 'E-commerce Premium', tags: ['NEXT.JS', 'STRIPE'] },
             { title: 'Dashboard Analytics', tags: ['REACT', 'TAILWIND'] },
           ].map((project, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
