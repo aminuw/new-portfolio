@@ -46,8 +46,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* About Me Section */}
+
+
+      {/* About Section */}
       <section className="py-32 px-4 md:px-12 max-w-7xl mx-auto">
+        <h2 className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-16">À propos.</h2>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-12 md:gap-24">
+          <div>
+            <h3 className="text-3xl md:text-5xl font-playfair font-bold text-zinc-950 tracking-tight leading-tight">
+              L'esthétique <br className="hidden md:block" />
+              <span className="italic font-light text-zinc-500">au service</span><br className="hidden md:block" /> de l'utilité.
+            </h3>
+          </div>
+          <div className="flex flex-col gap-6 font-mono text-sm md:text-base text-zinc-600 leading-relaxed justify-center">
+            <p>
+              Je m'appelle Amine, j'ai 19 ans et je suis actuellement en formation BTS SIO (option SLAM) à Orléans. Passionné par l'ingénierie logicielle et le web, je conçois des applications et des interfaces où la technique rencontre l'esthétisme.
+            </p>
+            <p>
+              Mon ambition est de bâtir des projets utiles, avec une véritable identité visuelle. Qu'il s'agisse du développement d'une plateforme web, d'une application mobile ou de l'architecture d'une base de données, mon exigence reste la même : livrer un résultat propre, clair et singulièrement agréable à utiliser.
+            </p>
+            <p>
+              Pragmatique et en quête continue d'apprentissage, j'aime me confronter à des défis concrets, itérer, et observer l'évolution de chaque produit au fil du temps.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-zinc-200">
         <h2 className="text-sm font-mono text-zinc-500 uppercase tracking-widest mb-16">Expertise.</h2>
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-zinc-950 tracking-tight mb-6">

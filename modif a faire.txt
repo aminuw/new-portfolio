@@ -1,0 +1,1 @@
+je dois ajouter a propos de moi, lien des projets dans accueil, dans projets verif vercel pour error 500, ajout info dans parcours, dans veille rendre lien accessible, test de contact et ajout des certif dans rubrique ou expertises ect

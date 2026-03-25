@@ -21,7 +21,7 @@ export function Navbar() {
     { href: '/', label: 'Accueil' },
     { href: '/projets', label: 'Projets' },
     { href: '/competences', label: 'Expertise' },
-    { href: '/parcours', label: 'Parcours' },
+    { href: '/parcours', label: 'Parcours & Certifications' },
     { href: '/veille', label: 'Veille' },
     { href: '/contact', label: 'Contact' },
   ];
