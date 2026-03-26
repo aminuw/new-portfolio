@@ -32,8 +32,8 @@ export function Navbar() {
         <nav className="bg-white/70 backdrop-blur-md border border-zinc-200/50 shadow-sm rounded-full p-2 flex items-center justify-between pointer-events-auto relative w-full max-w-[90vw] md:max-w-max md:justify-center">
           
           {/* Logo */}
-          <TransitionLink href="/" className="mr-auto md:mr-4 ml-4 md:ml-2 font-playfair text-xl md:text-xl font-bold tracking-tighter text-zinc-950 hover:text-zinc-600 transition-colors">
-            Amine.
+          <TransitionLink href="/" className="mr-auto md:mr-4 ml-4 md:ml-2 font-playfair text-xl font-bold tracking-tighter text-zinc-950 hover:text-zinc-600 transition-colors">
+            Amine<span className="text-orange-600">.</span>
           </TransitionLink>
           
           {/* Desktop Navigation */}
@@ -67,9 +67,9 @@ export function Navbar() {
               href="/fichiers/cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative px-5 py-2.5 text-[14px] font-semibold tracking-wide text-zinc-950 hover:bg-zinc-100 transition-colors duration-300 rounded-full z-10 flex items-center gap-2"
+              className="relative px-5 py-2.5 text-[14px] font-semibold tracking-wide text-zinc-500 hover:text-zinc-950 transition-colors duration-300 rounded-full z-10"
             >
-              CV ↗
+              CV
             </a>
           </div>
 

@@ -13,7 +13,7 @@ export interface SkillCategory {
 export const skills: SkillCategory[] = [
   {
     category: 'Frontend & Web',
-    description: 'Interfaces réactives et animations fluides pixel-perfect.',
+    description: 'Création d\'interfaces dynamiques et engageantes avec un grand souci du détail.',
     items: [
       { name: 'React.js', level: 'Apprentissage', keywords: 'Hooks, Context, Performance' },
       { name: 'TypeScript', level: 'Apprentissage', keywords: 'Typage strict, Interfaces' },
@@ -24,7 +24,7 @@ export const skills: SkillCategory[] = [
   },
   {
     category: 'Software & Mobile',
-    description: 'Développement d\'applications natives et logicielles robustes.',
+    description: 'Conception de solutions applicatives pérennes, sur mobile et desktop.',
     items: [
       { name: 'Kotlin', level: 'Scolaire', keywords: 'Android Studio, Jetpack Compose' },
       { name: 'Java', level: 'Intermédiaire', keywords: 'POO, Swing' },
@@ -33,7 +33,7 @@ export const skills: SkillCategory[] = [
   },
   {
     category: 'Opération & Data',
-    description: 'Des fondations solides et structurées pour gérer les données.',
+    description: 'Mise en place d\'architectures de données fiables et optimisées.',
     items: [
       { name: 'SQL / MySQL', level: 'Solide', keywords: 'Relations, Indexing, Requêtes complexes' },
       { name: 'Architecture', level: 'Quotidien', keywords: 'MCD, MLD, Vues' },
@@ -52,7 +52,7 @@ export const skills: SkillCategory[] = [
   },
   {
     category: 'Outils &+',
-    description: 'Un workflow optimisé de la conception au déploiement.',
+    description: 'Maîtrise d\'outils professionnels pour assurer un cycle de développement fluide.',
     items: [
       { name: 'VS Code', level: 'IDE', keywords: 'Extensions, Debugging' },
       { name: 'Git / GitHub', level: 'Quotidien', keywords: 'Versioning, Actions, CI/CD' },

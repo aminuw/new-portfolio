@@ -5,6 +5,8 @@ import SmoothScroll from '@/components/SmoothScroll';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import InteractiveBackground from '@/components/InteractiveBackground';
+import CookieBanner from '@/components/CookieBanner';
+import AlternancePopup from '@/components/AlternancePopup';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -17,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Amine Agnaou | Développeur Web & Mobile',
+  title: 'Amine Agnaou — Portfolio',
   description: 'Portfolio de Amine Agnaou, développeur frontend et intégrateur web. Découvrez mes projets, mon expertise technique et mon parcours.',
   openGraph: {
     type: "website",
@@ -45,6 +47,8 @@ export default function RootLayout({
           </main>
           <Footer />
         </SmoothScroll>
+        <CookieBanner />
+        <AlternancePopup />
       </body>
     </html>
   );

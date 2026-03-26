@@ -37,9 +37,12 @@ export default function MentionsLegales() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-zinc-950 mb-4 font-sans">4. Données personnelles</h2>
-            <p>
+            <h2 className="text-lg font-bold text-zinc-950 mb-4 font-sans">4. Données personnelles & Cookies</h2>
+            <p className="mb-4">
               D&apos;une façon générale, vous pouvez visiter notre site sur Internet sans avoir à décliner votre identité et à fournir des informations personnelles vous concernant.
+            </p>
+            <p>
+              <strong>Cookies :</strong> Ce site utilise uniquement des cookies strictement nécessaires à la bonne expérience utilisateur (sauvegarde de vos préférences d'affichage et état des popups). Aucune donnée n'est recueillie à des fins publicitaires ou revendue à des tiers.
             </p>
           </div>
         </div>
