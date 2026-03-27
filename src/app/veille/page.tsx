@@ -1,29 +1,34 @@
-import { veilles } from '@/data/veille';
+'use client';
+
+import { getVeilles } from '@/data/veille';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export default function Veille() {
+  const { lang, t } = useLanguage();
+  const veilleItems = getVeilles(lang);
   return (
-    <div className="w-full pt-32 pb-32 px-4 min-h-screen selection:bg-zinc-950 selection:text-white bg-zinc-50 overflow-hidden relative">
+    <div className="w-full pt-32 pb-32 px-4 min-h-screen overflow-hidden relative">
       <div className="max-w-4xl mx-auto mb-32 text-center md:mt-12">
-        <h1 className="text-[12vw] md:text-[8vw] leading-none font-playfair font-bold text-zinc-950 tracking-tighter mb-8">
-          Veille <span className="italic font-light text-zinc-400">Tech.</span>
+        <h1 className="text-[12vw] md:text-[8vw] leading-none font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-8">
+          {t.veille.title} <span className="italic font-light text-zinc-400 dark:text-zinc-500">{t.veille.titleItalic}</span>
         </h1>
-        <p className="font-mono text-sm md:text-base text-zinc-500 uppercase tracking-widest max-w-2xl mx-auto leading-relaxed relative inline-block">
+        <p className="font-mono text-sm md:text-base text-zinc-500 dark:text-zinc-400 uppercase tracking-widest max-w-2xl mx-auto leading-relaxed relative inline-block">
           <span className="absolute -left-6 top-1/2 -translate-y-1/2 w-4 h-[1px] bg-orange-600/50 hidden md:block"></span>
-          Roadmap des innovations de l'écosystème
+          {t.veille.subtitle}
           <span className="absolute -right-6 top-1/2 -translate-y-1/2 w-4 h-[1px] bg-orange-600/50 hidden md:block"></span>
         </p>
       </div>
 
       <div className="max-w-6xl mx-auto flex flex-col pt-12 relative">
-        {veilles.map((item, index) => {
+        {veilleItems.map((item, index) => {
           const isEven = index % 2 === 0;
-          const isLast = index === veilles.length - 1;
+          const isLast = index === veilleItems.length - 1;
 
           return (
-            <div key={item.id} className="relative w-full flex items-center md:min-h-[400px] py-16 group">
+            <div key={item.id} className="relative w-full flex items-center min-h-[400px] md:min-h-0 md:h-[450px] py-16 md:py-0 group">
               
               {/* THE NODE (Dots on the timeline) */}
-              <div className="absolute left-8 md:left-[50%] top-[50%] w-5 h-5 rounded-full border-[4px] border-white bg-orange-500 -translate-x-1/2 -translate-y-1/2 shadow-lg z-20 group-hover:scale-[1.5] transition-transform duration-500"></div>
+              <div className="absolute left-8 md:left-[50%] top-[50%] w-5 h-5 rounded-full border-[4px] border-white dark:border-zinc-900 bg-orange-500 -translate-x-1/2 -translate-y-1/2 shadow-lg z-20 group-hover:scale-[1.5] transition-transform duration-500"></div>
 
               {/* S-CURVE WINDING PATH FOR DESKTOP */}
               {/* This draws the curved snake path connecting the dots */}
@@ -54,7 +59,7 @@ export default function Veille() {
                   </span>
                   
                   {/* Precise Month Badge */}
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 bg-white px-4 py-2 rounded-full border border-zinc-200 shadow-sm mb-8 flex items-center gap-2 group-hover:-translate-y-1 transition-transform z-10 relative">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 bg-white dark:bg-zinc-800 px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-700 shadow-sm mb-8 flex items-center gap-2 group-hover:-translate-y-1 transition-transform z-10 relative">
                     <span className="w-2 h-2 rounded-full bg-orange-200 group-hover:bg-orange-600 transition-colors"></span>
                     {item.date}
                   </span>
@@ -64,7 +69,7 @@ export default function Veille() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full bg-white/70 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-zinc-200 shadow-xl shadow-zinc-950/5 hover:shadow-2xl hover:shadow-orange-950/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
+                    className="block w-full bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-zinc-200 nacre-border shadow-xl shadow-zinc-950/5 hover:shadow-2xl hover:shadow-orange-950/20 dark:hover:shadow-orange-500/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden"
                   >
                     <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-orange-400 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
@@ -72,17 +77,17 @@ export default function Veille() {
                       {item.category}
                     </span>
                     
-                    <h3 className={`text-2xl md:text-3xl font-playfair font-bold text-zinc-950 mb-4 leading-snug transition-all duration-300 ${isEven ? 'group-hover:italic' : 'group-hover:-skew-x-6'}`}>
+                    <h3 className={`text-2xl md:text-3xl font-playfair font-bold text-zinc-950 dark:text-zinc-100 mb-4 leading-snug transition-all duration-300 ${isEven ? 'group-hover:italic' : 'group-hover:-skew-x-6'}`}>
                       {item.title}
                     </h3>
                     
-                    <p className={`font-mono text-sm leading-relaxed text-zinc-600 mb-8 ${isEven ? 'text-left' : 'md:text-right text-left'}`}>
+                    <p className={`font-mono text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 mb-8 ${isEven ? 'text-left' : 'md:text-right text-left'}`}>
                       {item.description}
                     </p>
                     
-                    <div className={`flex items-center gap-3 text-xs font-mono font-bold text-zinc-900 uppercase tracking-[0.15em] ${isEven ? '' : 'md:flex-row-reverse'}`}>
-                      <span className="w-8 h-[2px] bg-zinc-900 group-hover:w-16 group-hover:bg-orange-600 transition-all duration-500"></span>
-                      <span className="group-hover:text-orange-600 transition-colors">Découvrir</span>
+                    <div className={`flex items-center gap-3 text-xs font-mono font-bold text-zinc-900 dark:text-zinc-200 uppercase tracking-[0.15em] ${isEven ? '' : 'md:flex-row-reverse'}`}>
+                      <span className="w-8 h-[2px] bg-zinc-900 dark:bg-zinc-300 group-hover:w-16 group-hover:bg-orange-600 transition-all duration-500"></span>
+                      <span className="group-hover:text-orange-600 transition-colors">{t.veille.discover}</span>
                     </div>
                   </a>
 

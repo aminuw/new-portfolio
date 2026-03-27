@@ -53,10 +53,10 @@ export default function InteractiveBackground() {
     };
   }, [mouseX, mouseY]);
 
-  if (!isMounted) return <div className="fixed inset-0 z-[-1] bg-zinc-50 pointer-events-none" />;
+  if (!isMounted) return <div className="fixed inset-0 z-[-1] bg-zinc-50 dark:bg-zinc-950 pointer-events-none" />;
 
   return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-zinc-50">
+    <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500">
       
       {/* Base static grid (very faint) */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
@@ -70,9 +70,9 @@ export default function InteractiveBackground() {
         }}
       />
       
-      {/* Colored Blur Orb to add the "flou" effect */}
+      {/* Colored Blur Orb — nacré orange in dark mode (Hidden on mobile for performance) */}
       <motion.div
-        className="absolute rounded-full blur-[80px] bg-zinc-400/30"
+        className="hidden md:block absolute rounded-full blur-[80px] bg-zinc-400/30 dark:bg-orange-500/20"
         style={{
           width: 500,
           height: 500,
@@ -88,8 +88,8 @@ export default function InteractiveBackground() {
         transition={{ duration: 0.3 }}
       />
       
-      {/* Vignet overlay to keep the edges slightly blended */}
-      <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(250,250,250,1)] mix-blend-overlay" />
+      {/* Vignet overlay to keep the edges slightly blended (Hidden on mobile to save GPU) */}
+      <div className="hidden md:block absolute inset-0 shadow-[inset_0_0_100px_rgba(250,250,250,1)] dark:shadow-[inset_0_0_100px_rgba(10,10,10,1)] mix-blend-overlay pointer-events-none" />
     </div>
   );
 }

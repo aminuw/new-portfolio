@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-playfair: var(--font-playfair), ui-serif, Georgia, serif;
@@ -7,9 +9,8 @@
 
 @layer base {
   body {
-    background-color: var(--color-zinc-50);
-    color: var(--color-zinc-950);
     letter-spacing: -0.01em;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
   h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.03em;
@@ -26,7 +27,33 @@
   }
 }
 
-/* Custom Scrollbar - Minimalist */
+/* ========================================= */
+/* DARK MODE — Night Mode Nacré Orange       */
+/* ========================================= */
+
+/* Dark mode grid pattern */
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(251, 146, 60, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(251, 146, 60, 0.06) 1px, transparent 1px);
+}
+
+/* Dark mode scrollbar with nacré orange */
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(251, 146, 60, 0.3);
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 146, 60, 0.5);
+}
+
+/* Nacré orange glow borders for dark mode */
+.dark .nacre-border {
+  border-color: rgba(251, 146, 60, 0.15);
+  box-shadow: 0 0 30px rgba(251, 146, 60, 0.05), inset 0 0 30px rgba(251, 146, 60, 0.02);
+}
+
+/* Default Light scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -39,4 +66,10 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-zinc-400);
+}
+
+/* Selection in dark mode */
+.dark ::selection {
+  background-color: rgba(234, 88, 12, 0.8);
+  color: white;
 }
