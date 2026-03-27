@@ -8,7 +8,7 @@ Ce projet est le portfolio personnel d'Amine Agnaou, Développeur Front-end & Mo
 Le projet a initialement été généré via `create-next-app` avec une architecture App Router (Next.js 15), TypeScript et Tailwind CSS. 
 La première itération utilisait un thème sombre profond (`zinc-950`), un design inspiré des interfaces Apple/Vercel basé sur une grille asymétrique (**BentoGrid**).
 
-### Phase 2 : Refonte "Editorial Minimalist" (Inspiration Ambroise Boutrin)
+### Phase 2 : Refonte "Editorial Minimalist"
 Une refonte majeure a été effectuée pour faire évoluer le design vers une esthétique de **Studio Créatif Premium** :
 - **Thème :** Passage en mode clair (`Light Mode` sur fond `zinc-50`) avec une subtile grille de fond (`bg-grid-pattern`).
 - **Typographie :** Utilisation massive et surdimensionnée de **Playfair Display** (Serif) pour les titres en contraste avec **Inter** et des polices **Monospace** pour les données et libellés techniques.
