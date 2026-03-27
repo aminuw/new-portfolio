@@ -10,6 +10,7 @@ import AlternancePopup from '@/components/AlternancePopup';
 import CustomCursor from '@/components/CustomCursor';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { LanguageProvider } from '@/components/LanguageProvider';
+import { MobileTabBar } from '@/components/MobileTabBar';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -104,11 +105,12 @@ export default function RootLayout({
             <InteractiveBackground />
             <SmoothScroll>
               <Navbar />
-              <main className="flex-1 w-full flex flex-col items-center">
+              <main className="flex-1 w-full flex flex-col items-center pb-24 md:pb-0">
                 {children}
               </main>
               <Footer />
             </SmoothScroll>
+            <MobileTabBar />
             <CookieBanner />
             <AlternancePopup />
             <CustomCursor />

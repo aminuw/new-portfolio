@@ -19,16 +19,19 @@ export default function Veille() {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto flex flex-col pt-12 relative">
+      <div 
+        className="max-w-6xl mx-auto flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none pt-12 relative gap-6 md:gap-0 px-6 md:px-0 pb-12 md:pb-0"
+        style={{ scrollbarWidth: 'none' }}
+      >
         {veilleItems.map((item, index) => {
           const isEven = index % 2 === 0;
           const isLast = index === veilleItems.length - 1;
 
           return (
-            <div key={item.id} className="relative w-full flex items-center min-h-[400px] md:min-h-0 md:h-[450px] py-16 md:py-0 group">
+            <div key={item.id} className="relative w-full flex-none md:flex-auto items-center min-h-[400px] md:min-h-0 md:h-[450px] py-16 md:py-0 group min-w-[85vw] md:min-w-0 snap-center md:snap-none">
               
-              {/* THE NODE (Dots on the timeline) */}
-              <div className="absolute left-8 md:left-[50%] top-[50%] w-5 h-5 rounded-full border-[4px] border-white dark:border-zinc-900 bg-orange-500 -translate-x-1/2 -translate-y-1/2 shadow-lg z-20 group-hover:scale-[1.5] transition-transform duration-500"></div>
+              {/* THE NODE (Dots on the timeline) - Hidden on mobile carousel */}
+              <div className="hidden md:block absolute left-[50%] top-[50%] w-5 h-5 rounded-full border-[4px] border-white dark:border-zinc-900 bg-orange-500 -translate-x-1/2 -translate-y-1/2 shadow-lg z-20 group-hover:scale-[1.5] transition-transform duration-500"></div>
 
               {/* S-CURVE WINDING PATH FOR DESKTOP */}
               {/* This draws the curved snake path connecting the dots */}
@@ -40,14 +43,11 @@ export default function Veille() {
                 `}></div>
               )}
 
-              {/* STRAIGHT VERTICAL PATH FOR MOBILE */}
-              {!isLast && (
-                <div className="md:hidden absolute left-8 top-[50%] h-[100%] w-[3px] bg-orange-500/30 -translate-x-1/2 z-0"></div>
-              )}
+              {/* STRAIGHT VERTICAL PATH FOR MOBILE - REMOVED FOR HORIZONTAL CAROUSEL */}
 
               {/* THE CARD CONTENT */}
               {/* If isEven is true (0, 2, 4), the path curves RIGHT. So we place the card on the RIGHT inside the curve */}
-              <div className={`w-full md:w-5/12 pl-24 md:pl-0 relative z-30 
+              <div className={`w-full md:w-5/12 relative z-30 
                 ${isEven ? 'md:ml-auto md:pr-12' : 'md:mr-auto md:pl-12'}`}>
                 
                 <div className={`flex flex-col ${isEven ? 'md:items-start' : 'md:items-end'} items-start relative`}>

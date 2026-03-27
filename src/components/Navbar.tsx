@@ -114,7 +114,7 @@ export function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Menu Toggle Button - HIDDEN IN NEW MOBILE REFACTOR */}
           <div className="md:hidden flex items-center gap-1">
             <button
               onClick={toggleLang}
@@ -130,68 +130,19 @@ export function Navbar() {
             >
               {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
             </button>
-            <button 
-              className="p-2 mr-2 text-zinc-950 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-colors flex items-center justify-center cursor-pointer"
-              onClick={() => setIsMobileMenuOpen(true)}
-              aria-label="Ouvrir le menu"
-            >
-              <Menu size={20} />
-            </button>
+            {/* The hamburger button has been removed in favor of the Bottom Tab Bar */}
           </div>
         </nav>
       </motion.header>
 
-      {/* Mobile Full-Screen Menu Overlay */}
+      {/* Mobile Full-Screen Menu Overlay - Disabled since we use Bottom Tab Bar */}
+      {/* 
       <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur-xl flex flex-col justify-center items-center pointer-events-auto"
-          >
-            <button 
-              className="absolute top-8 right-8 p-3 bg-zinc-100 dark:bg-zinc-800 rounded-full text-zinc-950 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors outline-none cursor-pointer"
-              onClick={() => setIsMobileMenuOpen(false)}
-              aria-label="Fermer le menu"
-            >
-              <X size={24} />
-            </button>
-
-            <nav className="flex flex-col items-center gap-8 w-full px-6">
-              {links.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <TransitionLink
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={cn(
-                      'text-4xl md:text-5xl font-playfair font-bold tracking-tighter transition-colors',
-                      isActive ? 'text-zinc-950 dark:text-orange-500 italic' : 'text-zinc-400 dark:text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-300'
-                    )}
-                  >
-                    {link.label}
-                  </TransitionLink>
-                );
-              })}
-              
-              <div className="w-12 h-[1px] bg-zinc-300 dark:bg-zinc-700 my-4" />
-              
-              <a
-                href="/fichiers/cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-mono tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
-              >
-                {t.nav.downloadCv}
-              </a>
-            </nav>
-          </motion.div>
-        )}
+        ... original mobile menu ...
       </AnimatePresence>
+      */}
+
+
     </>
   );
 }

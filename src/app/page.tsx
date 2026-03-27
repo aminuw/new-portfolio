@@ -32,7 +32,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-8 items-start sm:items-center mt-12 max-w-2xl"
           >
             <MagneticButton>
-              <Link href="/contact" className="shrink-0 inline-flex items-center justify-center px-8 py-4 bg-zinc-950 dark:bg-orange-600 text-white rounded-full text-sm font-medium tracking-wide hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300">
+              <Link href="/contact" className="w-full md:w-auto shrink-0 inline-flex flex-1 items-center justify-center px-8 py-4 bg-zinc-950 dark:bg-orange-600 text-white rounded-full text-sm font-medium tracking-wide hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300">
                 {t.hero.cta}
               </Link>
             </MagneticButton>
@@ -61,8 +61,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* About Section */}
-      <section className="py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
+      {/* About Section - Hidden on Mobile (Users can check Parcours in TabBar) */}
+      <section className="hidden md:block py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
         <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-start relative">
           <div className="md:w-1/3 md:sticky md:top-32">
             <h2 className="text-sm font-mono text-zinc-600 dark:text-zinc-400 font-medium uppercase tracking-widest mb-8">{t.about.label}<span className="text-orange-600">.</span></h2>
@@ -100,8 +100,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Expertise Section */}
-      <section className="py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
+      {/* Expertise Section - Hidden on Mobile (Users can check Competences in TabBar) */}
+      <section className="hidden md:block py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
         <h2 className="text-sm font-mono text-zinc-600 dark:text-zinc-400 font-medium uppercase tracking-widest mb-16 text-center md:text-left">{t.expertise.label}<span className="text-orange-600">.</span></h2>
         <div className="mb-24 md:w-2/3 text-center md:text-left mx-auto md:mx-0">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tight mb-8">

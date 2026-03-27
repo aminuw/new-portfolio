@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { getSkills } from '@/data/skills';
 import Link from 'next/link';
 import { useLanguage } from '@/components/LanguageProvider';
@@ -7,6 +8,24 @@ import { useLanguage } from '@/components/LanguageProvider';
 export default function Skills() {
   const { lang, t } = useLanguage();
   const skillsList = getSkills(lang);
+  const [activeCategory, setActiveCategory] = useState(skillsList[0].category);
+
+  const scrollToCategory = (category: string) => {
+    setActiveCategory(category);
+    const element = document.getElementById(category);
+    if (element) {
+      const offset = 100;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <div className="w-full pt-32 pb-32 px-4 min-h-screen">
@@ -21,9 +40,26 @@ export default function Skills() {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto md:px-12 flex flex-col gap-32">
+      {/* Mobile Category Selector */}
+      <div className="md:hidden sticky top-[72px] z-40 bg-zinc-50/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 mb-12 -mx-4 px-4 py-4 flex overflow-x-auto gap-2 no-scrollbar">
+        {skillsList.map((group) => (
+          <button
+            key={group.category}
+            onClick={() => scrollToCategory(group.category)}
+            className={`flex-none px-6 py-2 rounded-full font-mono text-[10px] uppercase tracking-widest transition-all duration-300 ${
+              activeCategory === group.category
+                ? 'bg-zinc-950 dark:bg-orange-600 text-white shadow-md'
+                : 'bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-500'
+            }`}
+          >
+            {group.category}
+          </button>
+        ))}
+      </div>
+
+      <div className="max-w-6xl mx-auto md:px-12 flex flex-col gap-24 md:gap-32">
         {skillsList.map((skillGroup, groupIdx) => (
-          <div key={skillGroup.category} className="flex flex-col">
+          <div key={skillGroup.category} id={skillGroup.category} className="flex flex-col scroll-mt-32">
             
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b-2 border-zinc-950 dark:border-zinc-300 pb-6">
               <h2 className="text-4xl md:text-5xl font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tight">
@@ -56,7 +92,7 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className="max-w-6xl mx-auto md:px-12 mt-32 text-center border-t border-zinc-200 dark:border-zinc-800 pt-24">
+      <div className="hidden md:block max-w-6xl mx-auto md:px-12 mt-32 text-center border-t border-zinc-200 dark:border-zinc-800 pt-24">
         <h3 className="text-3xl font-playfair font-bold text-zinc-950 dark:text-zinc-100 mb-6 tracking-tight">{t.competences.ctaTitle}<span className="text-orange-600">.</span></h3>
         <p className="font-mono text-sm text-zinc-500 dark:text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
           {t.competences.ctaText}
