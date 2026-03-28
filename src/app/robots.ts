@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://amine-agnaou.com';
-  
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://agnaou-amine.netlify.app';
+
   return {
     rules: {
       userAgent: '*',

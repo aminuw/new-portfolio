@@ -37,7 +37,7 @@ export default function Contact() {
   return (
     <div className="w-full min-h-screen pt-32 pb-16 px-4 flex flex-col items-center justify-center">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 lg:gap-32 items-center">
-        
+
         {/* Left Side: Editorial Typography */}
         <div className="flex flex-col justify-center order-2 lg:order-1 mt-12 lg:mt-0">
           <h1 className="text-[14vw] lg:text-[9vw] leading-[0.85] font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-12">
@@ -65,7 +65,7 @@ export default function Contact() {
         {/* Right Side: Redesigned Minimalist Form */}
         <div className="w-full bg-white dark:bg-zinc-900 p-8 md:p-14 lg:p-12 rounded-[3rem] border border-zinc-200 dark:border-zinc-800 relative overflow-hidden shadow-2xl shadow-zinc-950/5 dark:shadow-black/20 order-1 lg:order-2">
           <form className="flex flex-col gap-10 relative z-10" onSubmit={handleSubmit}>
-            
+
             <div className="flex flex-col gap-2 group">
               <label htmlFor="fullname" className="font-mono text-[10px] font-bold text-zinc-400 uppercase tracking-[0.2em] transition-colors group-focus-within:text-zinc-950 dark:group-focus-within:text-orange-500">{t.contact.nameLabel}</label>
               <input type="text" name="fullname" id="fullname" required className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-700 py-3 text-lg font-playfair text-zinc-950 dark:text-zinc-100 focus:outline-none focus:border-zinc-950 dark:focus:border-orange-500 transition-colors placeholder:text-zinc-300 dark:placeholder:text-zinc-600 placeholder:font-mono placeholder:text-sm placeholder:italic" placeholder={t.contact.namePlaceholder} />
