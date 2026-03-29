@@ -9,7 +9,7 @@ export default function Veille() {
   return (
     <div className="w-full pt-32 pb-32 px-4 min-h-screen overflow-hidden relative">
       <div className="max-w-4xl mx-auto mb-32 text-center md:mt-12">
-        <h1 className="text-[12vw] md:text-[8vw] leading-none font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-8">
+        <h1 className="text-[clamp(40px,10vw,80px)] md:text-[8vw] leading-none font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-8">
           {t.veille.title} <span className="italic font-light text-zinc-400 dark:text-zinc-500">{t.veille.titleItalic}</span>
         </h1>
         <p className="font-mono text-sm md:text-base text-zinc-500 dark:text-zinc-400 uppercase tracking-widest max-w-2xl mx-auto leading-relaxed relative inline-block">
@@ -20,15 +20,14 @@ export default function Veille() {
       </div>
 
       <div 
-        className="max-w-6xl mx-auto flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none pt-12 relative gap-6 md:gap-0 px-6 md:px-0 pb-12 md:pb-0"
-        style={{ scrollbarWidth: 'none' }}
+        className="max-w-6xl mx-auto flex flex-col pt-12 relative gap-16 md:gap-0 px-6 md:px-0 pb-12 md:pb-0"
       >
         {veilleItems.map((item, index) => {
           const isEven = index % 2 === 0;
           const isLast = index === veilleItems.length - 1;
 
           return (
-            <div key={item.id} className="relative w-full flex-none md:flex-auto items-center min-h-[400px] md:min-h-0 md:h-[450px] py-16 md:py-0 group min-w-[85vw] md:min-w-0 snap-center md:snap-none">
+            <div key={item.id} className="relative w-full flex-none md:flex-auto items-center min-h-0 md:h-[450px] py-4 md:py-0 group md:min-w-0">
               
               {/* THE NODE (Dots on the timeline) - Hidden on mobile carousel */}
               <div className="hidden md:block absolute left-[50%] top-[50%] w-5 h-5 rounded-full border-[4px] border-white dark:border-zinc-900 bg-orange-500 -translate-x-1/2 -translate-y-1/2 shadow-lg z-20 group-hover:scale-[1.5] transition-transform duration-500"></div>
@@ -53,7 +52,7 @@ export default function Veille() {
                 <div className={`flex flex-col ${isEven ? 'md:items-start' : 'md:items-end'} items-start relative`}>
                   
                   {/* Background Month Text (Watermark mode) */}
-                  <span className={`font-playfair text-6xl md:text-8xl font-bold text-zinc-900/[0.03] mb-2 tracking-tighter absolute -top-16 select-none group-hover:text-zinc-900/[0.08] transition-colors duration-500 whitespace-nowrap z-[-1]
+                  <span className={`hidden md:block font-playfair text-6xl md:text-8xl font-bold text-zinc-900/[0.03] mb-2 tracking-tighter absolute -top-16 select-none group-hover:text-zinc-900/[0.08] transition-colors duration-500 whitespace-nowrap z-[-1]
                     ${isEven ? 'left-0' : 'right-0'}`}>
                     {item.date.split(' ')[0]} {/* Affiche seulement le mois en gros */}
                   </span>

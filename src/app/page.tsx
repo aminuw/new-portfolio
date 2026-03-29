@@ -19,10 +19,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.2, 0.65, 0.3, 0.9] }}
-            className="text-[12vw] md:text-[8vw] leading-[0.9] font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-8 max-w-5xl"
+            className="text-[clamp(40px,10vw,90px)] md:text-[8vw] leading-[0.9] font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-8 max-w-5xl"
           >
             {t.hero.name}<span className="text-orange-600">.</span> <br />
-            <span className="italic font-light text-zinc-500 dark:text-zinc-400 text-[8vw] md:text-[5vw] block mt-4 md:mt-2">{t.hero.tagline}</span>
+            <span className="italic font-light text-zinc-500 dark:text-zinc-400 text-[clamp(28px,7vw,60px)] md:text-[5vw] block mt-4 md:mt-2">{t.hero.tagline}</span>
           </motion.h1>
 
           <motion.div
@@ -47,7 +47,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="w-full max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800 mt-auto pt-6 pb-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 font-mono text-[10px] md:text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-widest"
+          className="w-full max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800 mt-auto pt-6 pb-2 flex flex-col md:flex-row justify-between items-center md:items-start gap-4 font-mono text-[10px] md:text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-widest text-center md:text-left"
         >
           <div className="flex items-center gap-3">
             <div className="relative flex h-2 w-2">
@@ -56,13 +56,13 @@ export default function Home() {
             </div>
             {t.hero.available}
           </div>
-          <div>{t.hero.location}</div>
+          <div className="hidden md:block">{t.hero.location}</div>
           <div className="hidden md:block">{t.hero.scroll}</div>
         </motion.div>
       </section>
 
-      {/* About Section - Hidden on Mobile (Users can check Parcours in TabBar) */}
-      <section className="hidden md:block py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
+      {/* About Section */}
+      <section className="block py-24 md:py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
         <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-start relative">
           <div className="md:w-1/3 md:sticky md:top-32">
             <h2 className="text-sm font-mono text-zinc-600 dark:text-zinc-400 font-medium uppercase tracking-widest mb-8">{t.about.label}<span className="text-orange-600">.</span></h2>
@@ -100,8 +100,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Expertise Section - Hidden on Mobile (Users can check Competences in TabBar) */}
-      <section className="hidden md:block py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
+      {/* Expertise Section */}
+      <section className="block py-24 md:py-32 px-4 md:px-12 max-w-7xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
         <h2 className="text-sm font-mono text-zinc-600 dark:text-zinc-400 font-medium uppercase tracking-widest mb-16 text-center md:text-left">{t.expertise.label}<span className="text-orange-600">.</span></h2>
         <div className="mb-24 md:w-2/3 text-center md:text-left mx-auto md:mx-0">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tight mb-8">
@@ -112,7 +112,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden shadow-sm">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-px bg-transparent md:bg-zinc-200 dark:md:bg-zinc-800 border-none md:border border-zinc-200 dark:border-zinc-800 rounded-none md:rounded-3xl overflow-hidden shadow-none md:shadow-sm">
           {t.expertise.services.map((service, idx) => (
             <motion.div
               key={service.id}
@@ -120,15 +120,18 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white dark:bg-zinc-900 p-10 md:p-14 flex flex-col justify-between h-72 md:h-80 group hover:bg-zinc-50/80 dark:hover:bg-zinc-800 transition-all duration-500 cursor-default hover:scale-[1.03]"
+              className="bg-white dark:bg-zinc-900 p-8 md:p-14 flex flex-col justify-start md:justify-between h-auto md:h-80 group hover:bg-zinc-50/80 dark:hover:bg-zinc-800 transition-all duration-500 cursor-default md:hover:scale-[1.03] border border-zinc-200/80 dark:border-zinc-800 md:border-none rounded-[2rem] md:rounded-none shadow-xl shadow-zinc-950/5 md:shadow-none"
             >
-              <div className="flex justify-between items-start mb-8">
-                <div className="w-12 h-12 rounded-full border border-zinc-100 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center text-zinc-300 dark:text-zinc-600 font-mono text-xl group-hover:scale-125 group-hover:text-orange-500 group-hover:border-orange-200 dark:group-hover:border-orange-800 group-hover:bg-orange-50 dark:group-hover:bg-orange-950 transition-all duration-500">✧</div>
+              <div className="flex justify-between items-start mb-6 md:mb-8">
+                <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-0">
+                  <div className="w-12 h-12 rounded-full border border-zinc-100 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 flex items-center justify-center text-zinc-300 dark:text-zinc-600 font-mono text-xl group-hover:scale-125 group-hover:text-orange-500 group-hover:border-orange-200 dark:group-hover:border-orange-800 group-hover:bg-orange-50 dark:group-hover:bg-orange-950 transition-all duration-500">✧</div>
+                  <h3 className="font-playfair text-2xl font-bold tracking-tight text-zinc-950 dark:text-zinc-100 md:hidden group-hover:italic transition-all duration-300">{service.title}</h3>
+                </div>
                 <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500 border border-zinc-200 dark:border-zinc-700 rounded-full px-3 py-1 bg-white dark:bg-zinc-800 shadow-sm group-hover:text-orange-600 group-hover:border-orange-300 dark:group-hover:border-orange-700 group-hover:bg-orange-50 dark:group-hover:bg-orange-950 transition-all duration-500">{service.id}</span>
               </div>
               <div className="mt-auto">
-                <p className="font-mono text-xs md:text-sm text-zinc-500 dark:text-zinc-400 mb-4">{service.desc}</p>
-                <h3 className="font-playfair text-3xl md:text-4xl font-bold tracking-tight text-zinc-950 dark:text-zinc-100 group-hover:italic transition-all duration-300">{service.title}</h3>
+                <p className="font-mono text-xs md:text-sm text-zinc-500 dark:text-zinc-400 border-t border-zinc-100 dark:border-zinc-800 pt-6 md:pt-0 md:border-none leading-relaxed mb-0 md:mb-4">{service.desc}</p>
+                <h3 className="hidden md:block font-playfair text-3xl md:text-4xl font-bold tracking-tight text-zinc-950 dark:text-zinc-100 group-hover:italic transition-all duration-300">{service.title}</h3>
               </div>
             </motion.div>
           ))}
@@ -152,9 +155,9 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: (idx % 2) * 0.2 }}
-              className={`group flex flex-col cursor-pointer ${idx % 2 !== 0 ? 'md:mt-32' : ''}`}
+              className={`group relative flex flex-col cursor-pointer ${idx % 2 !== 0 ? 'md:mt-32' : ''}`}
             >
-              <div className="w-full aspect-[4/5] bg-zinc-100 dark:bg-zinc-800 rounded-2xl overflow-hidden relative mb-8 shadow-sm">
+              <div className="w-full aspect-[4/3] bg-zinc-100 dark:bg-zinc-800 rounded-2xl overflow-hidden relative mb-8 shadow-sm">
                 {project.image ? (
                   <div className="w-full h-full relative bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center group-hover:scale-[1.03] transition-transform duration-700 ease-in-out">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

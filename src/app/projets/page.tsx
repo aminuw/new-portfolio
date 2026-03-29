@@ -62,8 +62,7 @@ export default function Projects() {
       </div>
 
       <div 
-        className="max-w-7xl mx-auto md:px-12 flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none pb-12 md:pb-0 gap-6 md:gap-0 px-6 md:px-0 md:border-t border-zinc-200 dark:border-zinc-800"
-        style={{ scrollbarWidth: 'none' }}
+        className="max-w-7xl mx-auto md:px-12 flex flex-col pt-4 md:pt-0 overflow-hidden md:overflow-visible pb-12 md:pb-0 gap-16 md:gap-0 px-6 md:px-0 md:border-t border-zinc-200 dark:border-zinc-800"
       >
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, index) => (
@@ -77,7 +76,7 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col md:flex-row py-8 md:py-12 border border-zinc-200/80 md:border-0 md:border-b md:border-zinc-200 nacre-border hover:bg-zinc-50 dark:hover:bg-zinc-900/80 transition-colors px-6 md:px-8 cursor-pointer gap-6 md:gap-8 items-center min-w-[85vw] md:min-w-0 snap-center md:snap-none bg-white dark:bg-zinc-900/50 md:bg-transparent dark:md:bg-transparent rounded-3xl md:rounded-none shadow-xl shadow-zinc-200/20 md:shadow-none dark:shadow-none"
+              className="group flex flex-col md:flex-row py-8 md:py-12 border border-zinc-200/80 md:border-0 md:border-b md:border-zinc-200 nacre-border hover:bg-zinc-50 dark:hover:bg-zinc-900/80 transition-colors px-6 md:px-8 cursor-pointer gap-6 md:gap-8 items-center w-full bg-white dark:bg-zinc-900/50 md:bg-transparent dark:md:bg-transparent rounded-3xl md:rounded-none shadow-xl shadow-zinc-200/20 md:shadow-none dark:shadow-none"
             >
               <div className="w-full md:w-1/4 flex flex-col justify-between self-stretch">
                 <div>

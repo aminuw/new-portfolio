@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { TransitionLink } from '@/components/TransitionLink';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/components/ThemeProvider';
 import { useLanguage } from '@/components/LanguageProvider';
@@ -118,7 +118,7 @@ export function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle Button - HIDDEN IN NEW MOBILE REFACTOR */}
+          {/* Mobile Menu Toggle Button */}
           <div className="md:hidden flex items-center gap-1">
             <button
               onClick={toggleLang}
@@ -134,17 +134,71 @@ export function Navbar() {
             >
               {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
             </button>
-            {/* The hamburger button has been removed in favor of the Bottom Tab Bar */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-zinc-950 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-colors cursor-pointer ml-1"
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </nav>
       </motion.header>
 
-      {/* Mobile Full-Screen Menu Overlay - Disabled since we use Bottom Tab Bar */}
-      {/* 
+      {/* Mobile Full-Screen Menu Overlay */}
       <AnimatePresence>
-        ... original mobile menu ...
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="fixed inset-x-4 top-24 bottom-4 z-40 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl rounded-[2rem] border border-zinc-200/50 dark:border-zinc-700/50 shadow-2xl md:hidden overflow-hidden flex flex-col pointer-events-auto"
+          >
+            <div className="flex flex-col items-center justify-center flex-1 gap-6 p-8">
+              {links.map((link, idx) => {
+                const isActive = pathname === link.href;
+                return (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + idx * 0.05 }}
+                  >
+                    <TransitionLink
+                      href={link.href}
+                      className={cn(
+                        'text-2xl font-playfair font-bold tracking-tight transition-colors',
+                        isActive ? 'text-orange-600' : 'text-zinc-950 dark:text-zinc-100 hover:text-orange-500'
+                      )}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </TransitionLink>
+                  </motion.div>
+                );
+              })}
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + links.length * 0.05 }}
+                className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800 w-full flex justify-center"
+              >
+                <a
+                  href="/fichiers/cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-zinc-950 dark:bg-orange-600 text-white rounded-full font-mono text-xs uppercase tracking-[0.2em] transition-transform hover:scale-105"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {t.nav.cv}
+                </a>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
-      */}
 
 
     </>

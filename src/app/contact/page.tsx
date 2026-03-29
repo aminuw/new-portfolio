@@ -39,8 +39,8 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 lg:gap-32 items-center">
 
         {/* Left Side: Editorial Typography */}
-        <div className="flex flex-col justify-center order-2 lg:order-1 mt-12 lg:mt-0">
-          <h1 className="text-[14vw] lg:text-[9vw] leading-[0.85] font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-12">
+        <div className="flex flex-col justify-center order-1 mt-12 lg:mt-0">
+          <h1 className="text-[clamp(40px,12vw,90px)] lg:text-[9vw] leading-[0.85] font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-12">
             {t.contact.title1}<br />
             <span className="italic font-light text-zinc-500 dark:text-zinc-400">{t.contact.title2}</span>
           </h1>
@@ -63,7 +63,7 @@ export default function Contact() {
         </div>
 
         {/* Right Side: Redesigned Minimalist Form */}
-        <div className="w-full bg-white dark:bg-zinc-900 p-8 md:p-14 lg:p-12 rounded-[3rem] border border-zinc-200 dark:border-zinc-800 relative overflow-hidden shadow-2xl shadow-zinc-950/5 dark:shadow-black/20 order-1 lg:order-2">
+        <div className="w-full bg-white dark:bg-zinc-900 p-8 md:p-14 lg:p-12 rounded-[3rem] border border-zinc-200 dark:border-zinc-800 relative overflow-hidden shadow-2xl shadow-zinc-950/5 dark:shadow-black/20 order-2">
           <form className="flex flex-col gap-10 relative z-10" onSubmit={handleSubmit}>
 
             <div className="flex flex-col gap-2 group">

@@ -10,7 +10,6 @@ import AlternancePopup from '@/components/AlternancePopup';
 import CustomCursor from '@/components/CustomCursor';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { LanguageProvider } from '@/components/LanguageProvider';
-import { MobileTabBar } from '@/components/MobileTabBar';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { PageTransitionOverlay } from '@/components/PageTransitionOverlay';
 import { Preloader } from '@/components/Preloader';
@@ -116,7 +115,6 @@ export default function RootLayout({
                 </main>
                 <Footer />
               </SmoothScroll>
-              <MobileTabBar />
               <CookieBanner />
               <AlternancePopup />
               <CustomCursor />

@@ -30,7 +30,7 @@ export default function Skills() {
   return (
     <div className="w-full pt-32 pb-32 px-4 min-h-screen">
       <div className="max-w-4xl mx-auto mb-32 md:px-12 text-center md:mt-12">
-        <h1 className="text-[12vw] md:text-[8vw] leading-none font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-8">
+        <h1 className="text-[clamp(40px,10vw,80px)] md:text-[8vw] leading-none font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter mb-8">
           <span className="italic font-light text-zinc-600 dark:text-zinc-400">{t.competences.titleItalic}</span> {t.competences.title}
         </h1>
         <p className="font-mono text-sm md:text-base text-zinc-500 dark:text-zinc-400 uppercase tracking-widest max-w-2xl mx-auto leading-relaxed relative inline-block">
