@@ -152,9 +152,9 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: (idx % 2) * 0.2 }}
-              className={`group flex flex-col cursor-pointer ${idx % 2 !== 0 ? 'md:mt-32' : ''}`}
+              className={`group relative flex flex-col cursor-pointer ${idx % 2 !== 0 ? 'md:mt-32' : ''}`}
             >
-              <div className="w-full aspect-[4/5] bg-zinc-100 dark:bg-zinc-800 rounded-2xl overflow-hidden relative mb-8 shadow-sm">
+              <div className="w-full aspect-[4/3] bg-zinc-100 dark:bg-zinc-800 rounded-2xl overflow-hidden relative mb-8 shadow-sm">
                 {project.image ? (
                   <div className="w-full h-full relative bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center group-hover:scale-[1.03] transition-transform duration-700 ease-in-out">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

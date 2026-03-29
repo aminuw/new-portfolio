@@ -21,7 +21,7 @@ const projectsData = {
       title: 'Candi-Pilot',
       description: 'Plateforme de mise en relation entre les étudiants et les entreprises pour des stages et alternances.',
       link: 'https://candi-pilot.vercel.app/',
-      image: '/fichiers/candi-pilot.png',
+      image: '/fichiers/candipilot.png',
       techs: ['TypeScript', 'JavaScript', 'HTML/CSS', 'SQL', 'API AI (GROK)'],
     },
     {
@@ -55,7 +55,7 @@ const projectsData = {
       title: 'Candi-Pilot',
       description: 'Platform connecting students and companies for internships and work-study positions.',
       link: 'https://candi-pilot.vercel.app/',
-      image: '/fichiers/candi-pilot.png',
+      image: '/fichiers/candipilot.png',
       techs: ['TypeScript', 'JavaScript', 'HTML/CSS', 'SQL', 'AI API (GROK)'],
     },
     {
