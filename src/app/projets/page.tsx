@@ -97,7 +97,6 @@ export default function Projects() {
               <div className="w-full md:w-1/3 aspect-[4/3] bg-zinc-100 dark:bg-zinc-800 rounded-lg overflow-hidden relative order-first md:order-none mb-6 md:mb-0">
                 {project.image ? (
                   <div className="w-full h-full relative bg-zinc-200/50 dark:bg-zinc-700/50 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-700 ease-out">
-                    <span className="font-mono text-sm text-zinc-400 absolute z-10 text-center px-4 bg-white/80 dark:bg-zinc-900/80 py-2.5 rounded-full backdrop-blur-md shadow-sm">Miniature : {project.title}</span>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={project.image} alt={project.title} className="object-cover w-full h-full absolute inset-0 opacity-20 filter grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-700" />
                   </div>

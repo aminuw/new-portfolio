@@ -5,11 +5,10 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { TransitionLink } from '@/components/TransitionLink';
-import { Sun, Moon, VolumeX, Volume2 } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/components/ThemeProvider';
 import { useLanguage } from '@/components/LanguageProvider';
-import { useSoundDesign } from '@/components/SoundProvider';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -18,7 +17,6 @@ export function Navbar() {
   const { scrollY } = useScroll();
   const { theme, toggleTheme } = useTheme();
   const { lang, t, toggleLang } = useLanguage();
-  const { isMuted, toggleMute, playHover, playClick } = useSoundDesign();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
@@ -58,8 +56,6 @@ export function Navbar() {
           {/* Logo */}
           <TransitionLink 
             href="/" 
-            onMouseEnter={playHover}
-            onClick={playClick}
             className="mr-auto md:mr-4 ml-4 md:ml-2 font-playfair text-xl font-bold tracking-tighter text-zinc-950 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
           >
             Amine<span className="text-orange-600">.</span>
@@ -73,8 +69,6 @@ export function Navbar() {
                 <TransitionLink
                   key={link.href}
                   href={link.href}
-                  onMouseEnter={playHover}
-                  onClick={playClick}
                   className={cn(
                     'relative px-5 py-2.5 text-[14px] font-semibold tracking-wide transition-colors duration-300 rounded-full z-10',
                     isActive ? 'text-white' : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100'
@@ -102,20 +96,11 @@ export function Navbar() {
             >
               {t.nav.cv}
             </a>
-            {/* Mute Toggle */}
-            <button
-              onClick={() => { playClick(); toggleMute(); }}
-              className="p-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
-              aria-label="Toggle Sound"
-              title={isMuted ? 'Activer le son' : 'Couper le son'}
-            >
-              {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
-            </button>
             <div className="w-[1px] h-6 bg-zinc-200 dark:bg-zinc-700 mx-2" />
             
             {/* Lang Toggle */}
             <button
-              onClick={() => { playClick(); toggleLang(); }}
+              onClick={() => { toggleLang(); }}
               className="p-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
               aria-label="Toggle language"
               title={lang === 'fr' ? 'Switch to English' : 'Passer en Français'}
@@ -125,7 +110,7 @@ export function Navbar() {
             
             {/* Theme Toggle */}
             <button
-              onClick={() => { playClick(); toggleTheme(); }}
+              onClick={() => { toggleTheme(); }}
               className="p-2 text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
               aria-label="Toggle theme"
             >

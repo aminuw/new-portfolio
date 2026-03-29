@@ -157,7 +157,8 @@ export default function Home() {
               <div className="w-full aspect-[4/5] bg-zinc-100 dark:bg-zinc-800 rounded-2xl overflow-hidden relative mb-8 shadow-sm">
                 {project.image ? (
                   <div className="w-full h-full relative bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center group-hover:scale-[1.03] transition-transform duration-700 ease-in-out">
-                    <span className="font-mono text-sm text-zinc-400 absolute z-10 text-center px-4 bg-white/80 dark:bg-zinc-900/80 py-2 rounded-full backdrop-blur-sm">Image : {project.title}</span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={project.image} alt={project.title} className="object-cover w-full h-full absolute inset-0 transition-opacity duration-700" />
                   </div>
                 ) : (
                   <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-700 group-hover:scale-105 transition-transform duration-700 ease-out flex items-center justify-center">

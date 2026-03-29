@@ -5,7 +5,7 @@ const projectsData = {
       title: 'Système ERP / CRM',
       description: "Conception et développement d'une solution complète de gestion de la relation client, incluant l'architecture de base de données.",
       link: 'https://projet-crm-theta.vercel.app/',
-      image: '/images/projects/crm.jpg',
+      image: '/fichiers/crm.png',
       techs: ['PHP', 'MySQL', 'JavaScript', 'HTML/CSS'],
     },
     {
@@ -13,7 +13,7 @@ const projectsData = {
       title: 'Gestionnaire de Factures',
       description: 'Application full-stack de gestion de facturation avec persistance des données et stockage local.',
       link: 'https://projet-facture.vercel.app/',
-      image: '/images/projects/factures.jpg',
+      image: '/fichiers/factures.png',
       techs: ['PHP', 'SQL', 'Interface Native'],
     },
     {
@@ -21,7 +21,7 @@ const projectsData = {
       title: 'Candi-Pilot',
       description: 'Plateforme de mise en relation entre les étudiants et les entreprises pour des stages et alternances.',
       link: 'https://candi-pilot.vercel.app/',
-      image: '/images/projects/candi-pilot.jpg',
+      image: '/fichiers/candi-pilot.png',
       techs: ['TypeScript', 'JavaScript', 'HTML/CSS', 'SQL', 'API AI (GROK)'],
     },
     {
@@ -29,7 +29,7 @@ const projectsData = {
       title: 'Portfolio',
       description: 'Portfolio personnel au design minimaliste et animations ultra-fluides, optimisé pour la performance.',
       link: 'https://github.com/aminuw/new-portfolio',
-      image: '/images/projects/portfolio.jpg',
+      image: '/fichiers/portfolio.png',
       techs: ['TypeScript', 'JavaScript', 'HTML/CSS', 'Tailwind', 'Framer Motion'],
     }
   ],
@@ -39,7 +39,7 @@ const projectsData = {
       title: 'ERP / CRM System',
       description: 'Design and development of a complete client relationship management solution, including database architecture.',
       link: 'https://projet-crm-theta.vercel.app/',
-      image: '/images/projects/crm.jpg',
+      image: '/fichiers/crm.png',
       techs: ['PHP', 'MySQL', 'JavaScript', 'HTML/CSS'],
     },
     {
@@ -47,7 +47,7 @@ const projectsData = {
       title: 'Invoice Manager',
       description: 'Full-stack invoicing application with data persistence and local storage.',
       link: 'https://projet-facture.vercel.app/',
-      image: '/images/projects/factures.jpg',
+      image: '/fichiers/factures.png',
       techs: ['PHP', 'SQL', 'Native Interface'],
     },
     {
@@ -55,7 +55,7 @@ const projectsData = {
       title: 'Candi-Pilot',
       description: 'Platform connecting students and companies for internships and work-study positions.',
       link: 'https://candi-pilot.vercel.app/',
-      image: '/images/projects/candi-pilot.jpg',
+      image: '/fichiers/candi-pilot.png',
       techs: ['TypeScript', 'JavaScript', 'HTML/CSS', 'SQL', 'AI API (GROK)'],
     },
     {
@@ -63,7 +63,7 @@ const projectsData = {
       title: 'Portfolio',
       description: 'Personal portfolio with minimalist design and ultra-smooth animations, optimized for performance.',
       link: 'https://github.com/aminuw/new-portfolio',
-      image: '/images/projects/portfolio.jpg',
+      image: '/fichiers/portfolio.png',
       techs: ['TypeScript', 'JavaScript', 'HTML/CSS', 'Tailwind', 'Framer Motion'],
     }
   ]
