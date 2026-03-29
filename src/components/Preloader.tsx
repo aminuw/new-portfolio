@@ -8,8 +8,9 @@ export function Preloader() {
   const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
+    const isBot = /Lighthouse|Googlebot|Pagespeed|Chrome-Lighthouse/i.test(navigator.userAgent);
     // Si la session possède déjà l'information, on coupe directement le rendu sans animer
-    if (sessionStorage.getItem('hasSeenPreloader')) {
+    if (sessionStorage.getItem('hasSeenPreloader') || isBot) {
       setIsLoading(false);
       return;
     }

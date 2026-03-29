@@ -13,7 +13,7 @@ const projectsData = {
       title: 'Gestionnaire de Factures',
       description: 'Application full-stack de gestion de facturation avec persistance des données et stockage local.',
       link: 'https://projet-facture.vercel.app/',
-      image: '/fichiers/factures.png',
+      image: '',
       techs: ['PHP', 'SQL', 'Interface Native'],
     },
     {
@@ -47,7 +47,7 @@ const projectsData = {
       title: 'Invoice Manager',
       description: 'Full-stack invoicing application with data persistence and local storage.',
       link: 'https://projet-facture.vercel.app/',
-      image: '/fichiers/factures.png',
+      image: '',
       techs: ['PHP', 'SQL', 'Native Interface'],
     },
     {

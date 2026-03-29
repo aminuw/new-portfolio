@@ -21,12 +21,12 @@ export function Footer() {
             <a href="https://github.com/aminuw" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
             <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>
           </div>
-          <p className="text-zinc-500 font-mono text-xs text-center md:text-right">
+          <p className="text-zinc-400 font-mono text-xs text-center md:text-right">
             © {new Date().getFullYear()} Amine AGNAOU. <br className="md:hidden" />
             Basé à Orléans, France.
 
           </p>
-          <p className="text-zinc-500 font-mono text-xs text-center md:text-right">
+          <p className="text-zinc-400 font-mono text-xs text-center md:text-right">
             Siret : 988 376 836 00017
           </p>
         </div>
