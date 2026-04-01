@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Remplacer par le vrai domaine final en production
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://agnaou-amine.netlify.app';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://agnaou-amine.vercel.app';
 
   return [
     { url: `${baseUrl}/`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1 },
