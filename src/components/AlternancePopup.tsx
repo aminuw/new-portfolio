@@ -41,6 +41,7 @@ export default function AlternancePopup() {
             <button 
               onClick={closePopup}
               className="absolute top-6 right-8 text-zinc-400 hover:text-zinc-950 transition-colors z-20 text-xl"
+              aria-label="Fermer le popup"
             >
               ✕
             </button>

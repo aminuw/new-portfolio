@@ -8,11 +8,11 @@ import InteractiveBackground from '@/components/InteractiveBackground';
 import CookieBanner from '@/components/CookieBanner';
 import AlternancePopup from '@/components/AlternancePopup';
 import CustomCursor from '@/components/CustomCursor';
+import { FloatingBadge } from '@/components/FloatingBadge';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { LanguageProvider } from '@/components/LanguageProvider';
 import { ScrollToTop } from '@/components/ScrollToTop';
-import { PageTransitionOverlay } from '@/components/PageTransitionOverlay';
-import { Preloader } from '@/components/Preloader';
+
 
 const inter = Inter({
   variable: '--font-inter',
@@ -76,9 +76,6 @@ export default function RootLayout({
                   if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.documentElement.classList.add('dark');
                   }
-                  if (sessionStorage.getItem('hasSeenPreloader')) {
-                    document.documentElement.classList.add('hide-preloader');
-                  }
                 } catch(e) {}
               })();
             `,
@@ -117,10 +114,9 @@ export default function RootLayout({
               </SmoothScroll>
               <CookieBanner />
               <AlternancePopup />
+              <FloatingBadge />
               <CustomCursor />
               <ScrollToTop />
-              <PageTransitionOverlay />
-              <Preloader />
           </LanguageProvider>
         </ThemeProvider>
       </body>

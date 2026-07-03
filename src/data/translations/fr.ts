@@ -17,7 +17,7 @@ export const fr = {
     tagline: "De l'idée à la réalité digitale.",
     cta: 'Démarrer un projet',
     description: "Je conçois des expériences digitales sur-mesure, alliant de hautes performances techniques à un design raffiné.",
-    available: 'Disponible pour mission',
+    available: "Recherche d'alternance (Sept. 2026)",
     location: 'Basé à Paris, France',
     scroll: 'Scroll vers le bas ↓',
   },
@@ -28,7 +28,7 @@ export const fr = {
     title1: "L'élégance",
     title2: 'au profit',
     title3: 'de la fonction.',
-    p1: "Je m'appelle Amine, passionné par l'ingénierie logicielle et le web. Je conçois des applications et des interfaces où la technique rencontre l'esthétisme. En formation BTS SIO, je mets un point d'honneur à allier rigueur académique et exigences professionnelles du monde en entreprise.",
+    p1: "Je m'appelle Amine, passionné par l'ingénierie logicielle et le web. Je conçois des applications et des interfaces où la technique rencontre l'esthétisme. En Bachelor Concepteur Développeur d'Applications à CESI, après un BTS SIO, je recherche activement une alternance en développement web (rythme 3 semaines / 1 semaine), tout en alliant rigueur académique et exigences professionnelles.",
     p2: "Mon ambition est de bâtir des projets utiles, avec une véritable identité visuelle. Qu'il s'agisse du développement d'une plateforme web, d'une application mobile ou de l'architecture d'une base de données, mon exigence reste la même : livrer un résultat propre, clair et singulièrement agréable à utiliser.",
     p3: "Axé sur les résultats et animé par la curiosité technique, j'aime me confronter à des défis concrets, itérer, et observer l'évolution de chaque produit au fil du temps.",
   },
@@ -39,10 +39,10 @@ export const fr = {
     title: 'Je développe des solutions web complètes et évolutives.',
     description: "Ma démarche repose sur l'équilibre parfait entre une architecture logicielle robuste et une interface soignée, garantissant ainsi des produits digitaux d'excellence.",
     services: [
-      { id: '01', title: 'Conception', desc: 'Analyse logicielle, Architecture, Scalabilité' },
+      { id: '01', title: 'Conception', desc: 'Architecture Logicielle, Clean Code, Scalabilité' },
       { id: '02', title: 'Interface', desc: 'UI/UX Design, Design System, Interactions' },
-      { id: '03', title: 'Ingénierie', desc: 'Next.js, Ecosystème Mobile, APIs' },
-      { id: '04', title: 'Optimisation', desc: 'Haute fluidité, Performances, Accessibilité' },
+      { id: '03', title: 'Ingénierie', desc: 'Next.js, APIs REST, CI/CD' },
+      { id: '04', title: 'Qualité & Opti', desc: 'Tests Unitaires, Performances, Accessibilité (A11y)' },
     ],
   },
 
@@ -63,6 +63,16 @@ export const fr = {
     },
   },
 
+  // Project Modal
+  projectModal: {
+    context: 'Contexte',
+    goal: 'Objectif',
+    technologies: 'Technologies',
+    viewGithub: 'Voir sur GitHub',
+    viewLive: 'Voir le projet en direct',
+    close: 'Fermer',
+  },
+
   // Contact
   contact: {
     title1: 'On en',
@@ -70,7 +80,7 @@ export const fr = {
     subtitle: "Envie de donner vie à votre prochain projet ? Laissez-moi un message pour en discuter.",
     emailLabel: 'Email direct',
     availabilityLabel: 'Disponibilité',
-    availability: 'Ouvert aux opportunités',
+    availability: "Recherche d'alternance pour Septembre 2026",
     nameLabel: 'Nom complet *',
     namePlaceholder: 'Jean Dupont',
     emailFieldLabel: 'Adresse email *',
@@ -97,10 +107,12 @@ export const fr = {
 
   // Parcours
   parcours: {
-    titleItalic: 'Parcours',
-    title: 'Certifications.',
-    subtitle: 'Retrouvez ici mon cheminement académique, mes immersions professionnelles et les compétences validées tout au long de mon parcours.',
-    certTitle: 'Licences &',
+    title: 'Mon',
+    titleItalic: 'Parcours.',
+    subtitle: 'Expériences professionnelles, formations et certifications.',
+    educationTitle: 'Mes',
+    educationTitleItalic: 'Formations.',
+    certTitle: 'Mes',
     certTitleItalic: 'Certifications.',
   },
 

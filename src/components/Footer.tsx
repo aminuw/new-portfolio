@@ -22,9 +22,7 @@ export function Footer() {
             <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>
           </div>
           <p className="text-zinc-400 font-mono text-xs text-center md:text-right">
-            © {new Date().getFullYear()} Amine AGNAOU. <br className="md:hidden" />
-            Basé à Orléans, France.
-
+            © {new Date().getFullYear()} Amine AGNAOU.
           </p>
           <p className="text-zinc-400 font-mono text-xs text-center md:text-right">
             Siret : 988 376 836 00017

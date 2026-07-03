@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
-import { TransitionLink } from '@/components/TransitionLink';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/components/ThemeProvider';
@@ -54,19 +53,19 @@ export function Navbar() {
         <nav className="bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md border border-zinc-200/50 dark:border-zinc-700/50 shadow-sm rounded-full p-2 flex items-center justify-between pointer-events-auto relative w-full max-w-[90vw] md:max-w-max md:justify-center">
           
           {/* Logo */}
-          <TransitionLink 
+          <Link 
             href="/" 
             className="mr-auto md:mr-4 ml-4 md:ml-2 font-playfair text-xl font-bold tracking-tighter text-zinc-950 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors"
           >
             Amine<span className="text-orange-600">.</span>
-          </TransitionLink>
+          </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
             {links.map((link) => {
               const isActive = pathname === link.href;
               return (
-                <TransitionLink
+                <Link
                   key={link.href}
                   href={link.href}
                   className={cn(
@@ -82,14 +81,14 @@ export function Navbar() {
                     />
                   )}
                   {link.label}
-                </TransitionLink>
+                </Link>
               );
             })}
             
             {/* Controls: CV, Lang, Theme */}
             <div className="w-[1px] h-6 bg-zinc-200 dark:bg-zinc-700 mx-2" />
             <a
-              href="/fichiers/cv.pdf"
+              href="/fichiers/CV_Amine_AGNAOU_Alternance_Developpeur_FullStack.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="relative px-4 py-2.5 text-[14px] font-semibold tracking-wide text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors duration-300 rounded-full z-10"
@@ -165,7 +164,7 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + idx * 0.05 }}
                   >
-                    <TransitionLink
+                    <Link
                       href={link.href}
                       className={cn(
                         'text-2xl font-playfair font-bold tracking-tight transition-colors',
@@ -174,7 +173,7 @@ export function Navbar() {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.label}
-                    </TransitionLink>
+                    </Link>
                   </motion.div>
                 );
               })}
@@ -186,7 +185,7 @@ export function Navbar() {
                 className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800 w-full flex justify-center"
               >
                 <a
-                  href="/fichiers/cv.pdf"
+                  href="/fichiers/CV_Amine_AGNAOU_Alternance_Developpeur_FullStack.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-zinc-950 dark:bg-orange-600 text-white rounded-full font-mono text-xs uppercase tracking-[0.2em] transition-transform hover:scale-105"

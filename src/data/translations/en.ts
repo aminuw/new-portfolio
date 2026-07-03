@@ -17,7 +17,7 @@ export const en = {
     tagline: 'From idea to digital reality.',
     cta: 'Start a project',
     description: 'I design bespoke digital experiences, combining high technical performance with refined design.',
-    available: 'Available for work',
+    available: 'Seeking Work-Study (Sept. 2026)',
     location: 'Based in Paris, France',
     scroll: 'Scroll down ↓',
   },
@@ -28,7 +28,7 @@ export const en = {
     title1: 'Elegance',
     title2: 'serving',
     title3: 'function.',
-    p1: "I'm Amine, passionate about software engineering and web development. I design applications and interfaces where technology meets aesthetics. Currently studying for my BTS SIO, I commit to combining academic rigor with the professional demands of the business world.",
+    p1: "I'm Amine, passionate about software engineering and web development. I design applications and interfaces where technology meets aesthetics. Currently studying for a Bachelor's in Application Design and Development at CESI after a BTS SIO, I am actively seeking a work-study program in web development (3 weeks company / 1 week school), combining academic rigor with professional demands.",
     p2: "My ambition is to build useful projects with a true visual identity. Whether it's developing a web platform, a mobile app, or a database architecture, my standard remains the same: deliver a clean, clear, and uniquely enjoyable result.",
     p3: "Results-driven and fueled by technical curiosity, I love tackling concrete challenges, iterating, and observing how each product evolves over time.",
   },
@@ -39,10 +39,10 @@ export const en = {
     title: 'I build complete and scalable web solutions.',
     description: 'My approach is based on the perfect balance between robust software architecture and a refined interface, ensuring premium digital products.',
     services: [
-      { id: '01', title: 'Design', desc: 'Software Analysis, Architecture, Scalability' },
+      { id: '01', title: 'Design', desc: 'Software Architecture, Clean Code, Scalability' },
       { id: '02', title: 'Interface', desc: 'UI/UX Design, Design System, Interactions' },
-      { id: '03', title: 'Engineering', desc: 'Next.js, Mobile Ecosystem, APIs' },
-      { id: '04', title: 'Optimization', desc: 'High Fluidity, Performance, Accessibility' },
+      { id: '03', title: 'Engineering', desc: 'Next.js, REST APIs, CI/CD' },
+      { id: '04', title: 'Quality & Opti', desc: 'Unit Testing, Performance, Accessibility (A11y)' },
     ],
   },
 
@@ -63,6 +63,16 @@ export const en = {
     },
   },
 
+  // Project Modal
+  projectModal: {
+    context: 'Context',
+    goal: 'Goal',
+    technologies: 'Technologies',
+    viewGithub: 'View on GitHub',
+    viewLive: 'View Live Project',
+    close: 'Close',
+  },
+
   // Contact
   contact: {
     title1: "Let's",
@@ -70,7 +80,7 @@ export const en = {
     subtitle: 'Want to bring your next project to life? Leave me a message to discuss it.',
     emailLabel: 'Direct email',
     availabilityLabel: 'Availability',
-    availability: 'Open to opportunities',
+    availability: 'Seeking Work-Study for September 2026',
     nameLabel: 'Full name *',
     namePlaceholder: 'John Doe',
     emailFieldLabel: 'Email address *',
@@ -97,10 +107,12 @@ export const en = {
 
   // Parcours
   parcours: {
-    titleItalic: 'Journey',
-    title: 'Certifications.',
-    subtitle: 'Find here my academic path, professional immersions, and the skills validated throughout my journey.',
-    certTitle: 'Licenses &',
+    title: 'My',
+    titleItalic: 'Journey.',
+    subtitle: 'Professional experiences, education, and certifications.',
+    educationTitle: 'My',
+    educationTitleItalic: 'Education.',
+    certTitle: 'My',
     certTitleItalic: 'Certifications.',
   },
 

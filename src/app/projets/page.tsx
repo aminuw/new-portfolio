@@ -1,14 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import { getProjects } from '@/data/projects';
+import { getProjects, Project } from '@/data/projects';
 import { ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ProjectModal } from '@/components/ProjectModal';
 import { useLanguage } from '@/components/LanguageProvider';
 import Image from 'next/image';
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const { lang, t } = useLanguage();
   const allProjects = getProjects(lang);
 
@@ -67,16 +69,14 @@ export default function Projects() {
       >
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project, index) => (
-            <motion.a
+            <motion.div
               key={project.id}
               layout
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.5, ease: [0.2, 0.65, 0.3, 0.9] }}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => setSelectedProject(project)}
               className="group flex flex-col md:flex-row py-8 md:py-12 border border-zinc-200/80 md:border-0 md:border-b md:border-zinc-200 nacre-border hover:bg-zinc-50 dark:hover:bg-zinc-900/80 transition-colors px-6 md:px-8 cursor-pointer gap-6 md:gap-8 items-center w-full bg-white dark:bg-zinc-900/50 md:bg-transparent dark:md:bg-transparent rounded-3xl md:rounded-none shadow-xl shadow-zinc-200/20 md:shadow-none dark:shadow-none"
             >
               <div className="w-full md:w-1/4 flex flex-col justify-between self-stretch">
@@ -118,7 +118,7 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
           {filteredProjects.length === 0 && (
             <motion.div
@@ -131,6 +131,11 @@ export default function Projects() {
           )}
         </AnimatePresence>
       </div>
+
+      <ProjectModal 
+        project={selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+      />
     </div>
   );
 }

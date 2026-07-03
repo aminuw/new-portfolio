@@ -1,6 +1,6 @@
 'use client';
 
-import { getExperience } from '@/data/experience';
+import { getExperience, getEducation } from '@/data/experience';
 import { getCertifications } from '@/data/certifications';
 import Image from 'next/image';
 import { useLanguage } from '@/components/LanguageProvider';
@@ -8,6 +8,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 export default function Parcours() {
   const { lang, t } = useLanguage();
   const experienceList = getExperience(lang);
+  const educationList = getEducation(lang);
   const certificationsList = getCertifications(lang);
   return (
     <div className="w-full pt-32 pb-32 px-4 min-h-screen">
@@ -37,8 +38,39 @@ export default function Parcours() {
             </div>
             
             <div className="w-full md:w-2/3 flex flex-col justify-center">
-              <p className="font-mono text-sm md:text-base text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+              <p className="font-mono text-sm md:text-base text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed whitespace-pre-line">
                 {exp.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="max-w-7xl mx-auto md:px-12 mt-20 mb-8">
+        <h2 className="text-2xl md:text-4xl font-playfair font-bold text-zinc-950 dark:text-zinc-100 tracking-tighter">
+          {t.parcours.educationTitle} <span className="italic font-light text-zinc-500 dark:text-zinc-400">{t.parcours.educationTitleItalic}</span>
+        </h2>
+      </div>
+
+      <div className="max-w-7xl mx-auto md:px-12 flex flex-col border-t-[3px] border-zinc-950 dark:border-orange-500/30 pt-2">
+        {educationList.map((edu, index) => (
+          <div key={index} className="group flex flex-col md:flex-row py-12 border-b border-zinc-200/80 nacre-border hover:bg-white dark:hover:bg-zinc-900 transition-all duration-500 px-4 md:px-12 cursor-default gap-8 md:gap-24">
+            <div className="w-full md:w-1/3 flex flex-col justify-start">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 mb-4 flex items-center gap-4">
+                <span className="w-8 h-[1px] bg-zinc-300 group-hover:bg-orange-600 group-hover:w-16 transition-all duration-500"></span>
+                {edu.period}
+              </span>
+              <h2 className="text-2xl md:text-4xl font-playfair font-bold text-zinc-950 dark:text-zinc-100 group-hover:italic transition-all duration-500 leading-tight">
+                {edu.role}
+              </h2>
+              <span className="font-mono text-xs text-orange-600 font-bold mt-4 uppercase tracking-widest block">
+                {edu.company}
+              </span>
+            </div>
+            
+            <div className="w-full md:w-2/3 flex flex-col justify-center">
+              <p className="font-mono text-sm md:text-base text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed whitespace-pre-line">
+                {edu.description}
               </p>
             </div>
           </div>

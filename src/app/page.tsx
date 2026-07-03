@@ -1,15 +1,18 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { getProjects } from '@/data/projects';
+import { getProjects, Project } from '@/data/projects';
 import MagneticButton from '@/components/MagneticButton';
+import { ProjectModal } from '@/components/ProjectModal';
 import { useLanguage } from '@/components/LanguageProvider';
 import Image from 'next/image';
 
 export default function Home() {
   const { lang, t } = useLanguage();
   const projectsList = getProjects(lang);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <div className="w-full relative">
@@ -37,7 +40,12 @@ export default function Home() {
                 {t.hero.cta}
               </Link>
             </MagneticButton>
-            <p className="font-mono text-xs md:text-sm text-zinc-600 dark:text-zinc-400 uppercase tracking-widest leading-relaxed">
+            <MagneticButton>
+              <a href="/fichiers/CV_Amine_AGNAOU_Alternance_Developpeur_FullStack.pdf" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto shrink-0 inline-flex flex-1 items-center justify-center px-8 py-4 bg-transparent border border-zinc-950 dark:border-white text-zinc-950 dark:text-white rounded-full text-sm font-medium tracking-wide hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-300">
+                {t.nav.downloadCv}
+              </a>
+            </MagneticButton>
+            <p className="font-mono text-xs md:text-sm text-zinc-600 dark:text-zinc-400 uppercase tracking-widest leading-relaxed ml-0 sm:ml-4 mt-4 sm:mt-0 max-w-xs">
               {t.hero.description}
             </p>
           </motion.div>
@@ -172,9 +180,9 @@ export default function Home() {
               <div className="flex flex-col pt-6 border-t border-zinc-200 dark:border-zinc-800">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-playfair text-2xl md:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-100 group-hover:italic transition-all duration-300">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="before:absolute before:inset-0">
+                    <button onClick={() => setSelectedProject(project)} className="before:absolute before:inset-0 text-left outline-none">
                       {project.title}
-                    </a>
+                    </button>
                   </h3>
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-orange-600 text-xl">↗</span>
                 </div>
@@ -190,6 +198,11 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <ProjectModal 
+        project={selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+      />
     </div>
   );
 }
