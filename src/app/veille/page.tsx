@@ -84,9 +84,9 @@ export default function Veille() {
                       {item.description}
                     </p>
                     
-                    <div className={`flex items-center gap-3 text-xs font-mono font-bold text-zinc-900 dark:text-zinc-200 uppercase tracking-[0.15em] ${isEven ? '' : 'md:flex-row-reverse'}`}>
-                      <span className="w-8 h-[2px] bg-zinc-900 dark:bg-zinc-300 group-hover:w-16 group-hover:bg-orange-600 transition-all duration-500"></span>
-                      <span className="group-hover:text-orange-600 transition-colors">{t.veille.discover}</span>
+                    <div className={`flex items-center gap-3 text-xs font-mono font-bold text-white bg-zinc-950 dark:bg-orange-600 px-6 py-3 rounded-full uppercase tracking-[0.15em] w-fit group-hover:bg-orange-600 dark:group-hover:bg-orange-500 transition-all duration-300 shadow-md ${isEven ? '' : 'md:ml-auto'}`}>
+                      <span>{t.veille.discover}</span>
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </div>
                   </a>
 

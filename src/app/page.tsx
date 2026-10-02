@@ -193,6 +193,18 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                <div className="flex items-center justify-between mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800 relative z-10">
+                  {project.githubLink && (
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="font-mono text-xs uppercase tracking-widest text-zinc-500 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors flex items-center gap-2">
+                      <span>GitHub</span><span className="text-[10px]">↗</span>
+                    </a>
+                  )}
+                  {project.link && (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-mono text-xs uppercase tracking-widest text-orange-600 hover:text-orange-500 transition-colors font-bold flex items-center gap-2">
+                      <span>Live Site</span><span className="text-[10px]">↗</span>
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

@@ -121,6 +121,13 @@ export default function Parcours() {
                     ))}
                   </div>
                 )}
+                
+                {cert.link && (
+                  <a href={cert.link} target="_blank" rel="noopener noreferrer" className="mt-8 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-orange-600 hover:text-orange-500 transition-colors font-bold group/link">
+                    <span>Voir le certificat</span>
+                    <span className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform">↗</span>
+                  </a>
+                )}
               </div>
             </div>
           ))}
