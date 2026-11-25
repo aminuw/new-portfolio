@@ -135,7 +135,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     project.screens.map((screen, idx) => (
                       <div key={idx} className="w-full relative aspect-[4/3] rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-800">
                         {screen ? (
-                          <Image src={screen} alt={`${project.title} screenshot ${idx + 1}`} fill className="object-cover" />
+                          <Image src={screen} alt={`${project.title} — capture ${idx + 1}`} fill className="object-cover" />
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center font-mono text-sm text-zinc-400">Placeholder {idx + 1}</div>
                         )}

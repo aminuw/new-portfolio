@@ -1,6 +1,6 @@
 # Portfolio - Amine Agnaou
 
-Ce projet est le portfolio personnel d'Amine Agnaou, Développeur Front-end & Mobile.
+Ce projet est le portfolio personnel d'Amine Agnaou, Développeur logiciel et web en recherche d'alternance.
 
 ## 🕰️ Historique du Projet & Direction Artistique
 
@@ -53,7 +53,7 @@ Les contenus textuels d'Amine ont été extraits des pages pour être gérés ic
 - `experience.ts` : Formations et emplois (SmartUp, BTS SIO).
 
 ### `public/` (Ressources statiques)
-- `/fichiers/cv.pdf` : Le CV en version PDF appelé par le bouton de la Navbar.
+- `/fichiers/CV_Amine_AGNAOU_ESGI_Developpeur_Alternance.pdf` : Le CV en version PDF appelé par le bouton de la Navbar.
 
 ---
 

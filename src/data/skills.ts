@@ -1,121 +1,53 @@
-export interface SkillItem {
-  name: string;
-  level: string;
-  keywords: string;
-}
-
-export interface SkillCategory {
-  category: string;
-  description: string;
-  items: SkillItem[];
-}
+export interface SkillItem { name: string; level: string; keywords: string; }
+export interface SkillCategory { category: string; description: string; items: SkillItem[]; }
 
 const skillsData: Record<'fr' | 'en', SkillCategory[]> = {
   fr: [
-    {
-      category: 'Frontend & Web',
-      description: "Création d'interfaces dynamiques et engageantes avec un grand souci du détail.",
-      items: [
-        { name: 'React.js', level: 'Apprentissage', keywords: 'Hooks, Context, Performance' },
-        { name: 'TypeScript', level: 'Apprentissage', keywords: 'Typage strict, Interfaces' },
-        { name: 'Tailwind CSS', level: 'Note 10/10', keywords: 'Design System, Responsive' },
-        { name: 'Framer Motion', level: 'Passionné', keywords: 'Micro-interactions, Animations' },
-        { name: 'API REST', level: 'Quotidien', keywords: 'Requêtes, Réponses, JSON' },
-      ]
-    },
-    {
-      category: 'Software & Mobile',
-      description: 'Conception de solutions applicatives pérennes, sur mobile et desktop.',
-      items: [
-        { name: 'Kotlin', level: 'Scolaire', keywords: 'Android Studio, Jetpack Compose' },
-        { name: 'Java', level: 'Intermédiaire', keywords: 'POO, Swing' },
-        { name: 'PHP', level: 'Avancé', keywords: 'MVC, Bases Backend, POO' },
-      ]
-    },
-    {
-      category: 'Opération & Data',
-      description: "Mise en place d'architectures de données fiables et optimisées.",
-      items: [
-        { name: 'SQL / MySQL', level: 'Solide', keywords: 'Relations, Indexing, Requêtes complexes' },
-        { name: 'Architecture', level: 'Quotidien', keywords: 'MCD, MLD, Vues' },
-        { name: 'Supabase', level: 'Apprentissage', keywords: 'BaaS, Edge Functions' },
-      ]
-    },
-    {
-      category: 'Systeme & Réseaux',
-      description: 'Système et réseaux',
-      items: [
-        { name: 'Windows Server', level: 'Intermédiaire', keywords: 'Active Directory, GPO, DNS, DHCP' },
-        { name: 'Linux', level: 'Notions', keywords: 'Ubuntu, Debian, CentOS' },
-        { name: 'Réseaux', level: 'Intermédiaire', keywords: 'TCP/IP, DNS, DHCP, VPN' },
-        { name: 'Azure/AWS', level: 'Notions', keywords: 'Cloud, Virtualisation, Sécurité' },
-      ]
-    },
-    {
-      category: 'Outils &+',
-      description: "Maîtrise d'outils professionnels pour assurer un cycle de développement fluide.",
-      items: [
-        { name: 'VS Code', level: 'IDE', keywords: 'Extensions, Debugging' },
-        { name: 'Git / GitHub', level: 'Quotidien', keywords: 'Versioning, Actions, CI/CD' },
-        { name: 'Agile / Scrum', level: 'Quotidien', keywords: 'Sprints, Dailies, Kanban' },
-        { name: 'DevTools', level: 'Quotidien', keywords: 'Console, Debugging, Performance' },
-        { name: 'Curiosité', level: 'Infini', keywords: 'Veille techno permanente' },
-      ]
-    }
+    { category: 'Développement logiciel et web', description: 'Applications métier et fonctionnalités web réalisées en stage et dans mes projets.', items: [
+      { name: 'PHP', level: 'Stage et projet', keywords: 'PDO, CRUD, MVC' },
+      { name: 'Java', level: 'Formation', keywords: 'POO, programmation avancée' },
+      { name: 'TypeScript / JavaScript', level: 'Projets', keywords: 'Next.js, Node.js' },
+      { name: 'React / Next.js', level: 'Projets', keywords: 'Interfaces, routes serveur' },
+    ] },
+    { category: 'Données et API', description: 'Modélisation de données et échanges entre services.', items: [
+      { name: 'SQL / MySQL', level: 'Stage et formation', keywords: 'Modélisation, requêtes, relations' },
+      { name: 'Supabase', level: 'Projet CRM', keywords: 'Authentification, données' },
+      { name: 'API REST', level: 'Projets', keywords: 'Intégrations, JSON, Postman' },
+    ] },
+    { category: 'Automatisation et outils', description: 'Scripts et outils pour simplifier des tâches concrètes.', items: [
+      { name: 'Python', level: 'Bases', keywords: 'Scripts' },
+      { name: 'Bash / PowerShell', level: 'Notions', keywords: 'Commandes et scripts' },
+      { name: 'Git / GitHub', level: 'Projets', keywords: 'Suivi de versions' },
+      { name: 'IA via API', level: 'Projet personnel', keywords: 'Analyse d’offres, brouillons relus avant envoi' },
+    ] },
+    { category: 'Environnement IT', description: 'Expérience acquise en DSI lors du stage chez Groupe SATEC.', items: [
+      { name: 'Windows / Microsoft 365', level: 'Stage', keywords: 'Support, migration, documentation' },
+      { name: 'Active Directory', level: 'Notions', keywords: 'Comptes, environnement entreprise' },
+    ] },
   ],
   en: [
-    {
-      category: 'Frontend & Web',
-      description: 'Creating dynamic and engaging interfaces with great attention to detail.',
-      items: [
-        { name: 'React.js', level: 'Learning', keywords: 'Hooks, Context, Performance' },
-        { name: 'TypeScript', level: 'Learning', keywords: 'Strict Typing, Interfaces' },
-        { name: 'Tailwind CSS', level: '10/10', keywords: 'Design System, Responsive' },
-        { name: 'Framer Motion', level: 'Passionate', keywords: 'Micro-interactions, Animations' },
-        { name: 'REST API', level: 'Daily', keywords: 'Requests, Responses, JSON' },
-      ]
-    },
-    {
-      category: 'Software & Mobile',
-      description: 'Designing sustainable application solutions for mobile and desktop.',
-      items: [
-        { name: 'Kotlin', level: 'Academic', keywords: 'Android Studio, Jetpack Compose' },
-        { name: 'Java', level: 'Intermediate', keywords: 'OOP, Swing' },
-        { name: 'PHP', level: 'Advanced', keywords: 'MVC, Backend Basics, OOP' },
-      ]
-    },
-    {
-      category: 'Operations & Data',
-      description: 'Building reliable and optimized data architectures.',
-      items: [
-        { name: 'SQL / MySQL', level: 'Strong', keywords: 'Relations, Indexing, Complex Queries' },
-        { name: 'Architecture', level: 'Daily', keywords: 'CDM, LDM, Views' },
-        { name: 'Supabase', level: 'Learning', keywords: 'BaaS, Edge Functions' },
-      ]
-    },
-    {
-      category: 'Systems & Networks',
-      description: 'Systems and network administration.',
-      items: [
-        { name: 'Windows Server', level: 'Intermediate', keywords: 'Active Directory, GPO, DNS, DHCP' },
-        { name: 'Linux', level: 'Basics', keywords: 'Ubuntu, Debian, CentOS' },
-        { name: 'Networking', level: 'Intermediate', keywords: 'TCP/IP, DNS, DHCP, VPN' },
-        { name: 'Azure/AWS', level: 'Basics', keywords: 'Cloud, Virtualization, Security' },
-      ]
-    },
-    {
-      category: 'Tools &+',
-      description: 'Mastery of professional tools to ensure a smooth development cycle.',
-      items: [
-        { name: 'VS Code', level: 'IDE', keywords: 'Extensions, Debugging' },
-        { name: 'Git / GitHub', level: 'Daily', keywords: 'Versioning, Actions, CI/CD' },
-        { name: 'Agile / Scrum', level: 'Daily', keywords: 'Sprints, Dailies, Kanban' },
-        { name: 'DevTools', level: 'Daily', keywords: 'Console, Debugging, Performance' },
-        { name: 'Curiosity', level: 'Infinite', keywords: 'Continuous tech watch' },
-      ]
-    }
-  ]
+    { category: 'Software and web development', description: 'Business applications and web features built in internships and personal projects.', items: [
+      { name: 'PHP', level: 'Internship and project', keywords: 'PDO, CRUD, MVC' },
+      { name: 'Java', level: 'Coursework', keywords: 'OOP, programming' },
+      { name: 'TypeScript / JavaScript', level: 'Projects', keywords: 'Next.js, Node.js' },
+      { name: 'React / Next.js', level: 'Projects', keywords: 'Interfaces, server routes' },
+    ] },
+    { category: 'Data and APIs', description: 'Data modeling and service integrations.', items: [
+      { name: 'SQL / MySQL', level: 'Internship and coursework', keywords: 'Data modeling, queries, relations' },
+      { name: 'Supabase', level: 'CRM project', keywords: 'Authentication, data' },
+      { name: 'REST APIs', level: 'Projects', keywords: 'Integrations, JSON, Postman' },
+    ] },
+    { category: 'Automation and tools', description: 'Scripts and tools for practical tasks.', items: [
+      { name: 'Python', level: 'Basics', keywords: 'Scripts' },
+      { name: 'Bash / PowerShell', level: 'Basic knowledge', keywords: 'Commands and scripts' },
+      { name: 'Git / GitHub', level: 'Projects', keywords: 'Version control' },
+      { name: 'AI APIs', level: 'Personal project', keywords: 'Posting analysis, drafts reviewed before sending' },
+    ] },
+    { category: 'IT environment', description: 'Experience gained during an IT internship at Groupe SATEC.', items: [
+      { name: 'Windows / Microsoft 365', level: 'Internship', keywords: 'Support, migration, documentation' },
+      { name: 'Active Directory', level: 'Basic knowledge', keywords: 'Accounts, business environment' },
+    ] },
+  ],
 };
-
 export const skills = skillsData.fr;
 export const getSkills = (lang: 'fr' | 'en') => skillsData[lang];
