@@ -6,7 +6,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification validant les compétences fondamentales en création de sites web : structuration en HTML et stylisation en CSS.",
       image: "/fichiers/HTML.png",
-      link: "#",
+      link: "",
       skills: ["HTML5", "CSS3", "Intégration Web"]
     },
     {
@@ -15,7 +15,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification attestant de la maîtrise des bases de la programmation JavaScript et de l'interactivité côté client.",
       image: "/fichiers/JS.png",
-      link: "#",
+      link: "",
       skills: ["JavaScript", "DOM", "Logique de programmation"]
     },
     {
@@ -24,7 +24,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification sur la création de sites web dynamiques, la gestion de bases de données et la manipulation de données en PHP.",
       image: "/fichiers/PHP.png",
-      link: "#",
+      link: "",
       skills: ["PHP", "MySQL", "Back-end"]
     },
     {
@@ -33,7 +33,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification couvrant les concepts fondamentaux de la programmation orientée objet avec le langage Java.",
       image: "/fichiers/JAVA.png",
-      link: "#",
+      link: "",
       skills: ["Java", "POO", "Algorithmique"]
     },
     {
@@ -42,7 +42,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification sur l'utilisation de la bibliothèque jQuery pour simplifier la manipulation du DOM, les animations et les requêtes AJAX.",
       image: "/fichiers/JQUERY.png",
-      link: "#",
+      link: "",
       skills: ["jQuery", "JavaScript", "AJAX"]
     },
     {
@@ -51,7 +51,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification validant la compréhension des concepts clés des réseaux informatiques, du modèle OSI et des protocoles TCP/IP.",
       image: "/fichiers/TCPIP.png",
-      link: "#",
+      link: "",
       skills: ["Réseau", "TCP/IP", "Modèle OSI"]
     }
   ],
@@ -62,7 +62,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification validating core web creation skills: HTML structuring and CSS styling.",
       image: "/fichiers/HTML.png",
-      link: "#",
+      link: "",
       skills: ["HTML5", "CSS3", "Web Integration"]
     },
     {
@@ -71,7 +71,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification attesting to mastery of JavaScript programming fundamentals and client-side interactivity.",
       image: "/fichiers/JS.png",
-      link: "#",
+      link: "",
       skills: ["JavaScript", "DOM", "Programming Logic"]
     },
     {
@@ -80,7 +80,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification on creating dynamic websites, database management and PHP data manipulation.",
       image: "/fichiers/PHP.png",
-      link: "#",
+      link: "",
       skills: ["PHP", "MySQL", "Back-end"]
     },
     {
@@ -89,7 +89,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification covering core object-oriented programming concepts with the Java language.",
       image: "/fichiers/JAVA.png",
-      link: "#",
+      link: "",
       skills: ["Java", "OOP", "Algorithms"]
     },
     {
@@ -98,7 +98,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification on using the jQuery library to simplify DOM manipulation, animations and AJAX requests.",
       image: "/fichiers/JQUERY.png",
-      link: "#",
+      link: "",
       skills: ["jQuery", "JavaScript", "AJAX"]
     },
     {
@@ -107,7 +107,7 @@ const certificationsData = {
       date: "2025",
       description: "Certification validating understanding of key network concepts, the OSI model and TCP/IP protocols.",
       image: "/fichiers/TCPIP.png",
-      link: "#",
+      link: "",
       skills: ["Networking", "TCP/IP", "OSI Model"]
     }
   ]

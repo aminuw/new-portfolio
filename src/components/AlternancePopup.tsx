@@ -2,15 +2,19 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { cvUrl } from '@/data/site';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export default function AlternancePopup() {
   const [isVisible, setIsVisible] = useState(false);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     // Vérifier si le popup a déjà été vu pendant cette session
     const hasSeenPopup = sessionStorage.getItem('alternance-popup-seen');
     if (!hasSeenPopup) {
-      setTimeout(() => setIsVisible(true), 2500);
+      const timer = window.setTimeout(() => setIsVisible(true), 12000);
+      return () => window.clearTimeout(timer);
     }
   }, []);
 
@@ -41,7 +45,7 @@ export default function AlternancePopup() {
             <button 
               onClick={closePopup}
               className="absolute top-6 right-8 text-zinc-400 hover:text-zinc-950 transition-colors z-20 text-xl"
-              aria-label="Fermer le popup"
+              aria-label={lang === 'fr' ? 'Fermer' : 'Close'}
             >
               ✕
             </button>
@@ -52,23 +56,24 @@ export default function AlternancePopup() {
                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                  </div>
-                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold border border-zinc-200 px-3 py-1 rounded-full bg-zinc-50">Disponibilité</span>
+                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold border border-zinc-200 px-3 py-1 rounded-full bg-zinc-50">{lang === 'fr' ? 'Disponibilité' : 'Availability'}</span>
               </div>
 
               <h2 className="text-3xl md:text-5xl font-playfair font-bold text-zinc-950 tracking-tight leading-[1.1] mb-8">
-                Je suis actuellement à la recherche d'une <span className="italic font-light text-orange-600">Alternance.</span>
+                {lang === 'fr' ? 'Développeur en recherche d’une' : 'Developer seeking an'} <span className="italic font-light text-orange-600">{lang === 'fr' ? 'alternance.' : 'apprenticeship.'}</span>
               </h2>
 
               <p className="font-mono text-sm md:text-base text-zinc-600 leading-relaxed mb-10 border-l-[3px] border-zinc-950 pl-6 py-2">
-                Si vous avez une opportunité au sein de votre entreprise, ou si mon profil vous intéresse pour rejoindre votre équipe, n'hésitez pas à me contacter !
+                {lang === 'fr' ? 'Disponible immédiatement pour 12 mois en développement logiciel, web ou automatisation. BTS SIO SLAM obtenu ; entrée à l’ESGI Paris visée (admission en cours). Rythme recherché : 3 semaines en entreprise / 1 semaine à l’école.' : 'Available now for a 12-month software, web or automation apprenticeship. BTS SIO graduate; aiming to join ESGI Paris (admission pending). Preferred schedule: 3 weeks at work / 1 week at school.'}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link onClick={closePopup} href="/contact" className="flex-1 text-center bg-zinc-950 text-white font-mono text-xs uppercase tracking-widest py-5 rounded-2xl hover:bg-orange-600 transition-colors shadow-lg shadow-zinc-950/20">
-                  Me Contacter
+                  {lang === 'fr' ? 'Me contacter' : 'Contact me'}
                 </Link>
+                <a href={cvUrl} target="_blank" rel="noopener noreferrer" onClick={closePopup} className="flex-1 text-center bg-zinc-50 text-zinc-950 border border-zinc-200 font-mono text-xs uppercase tracking-widest py-5 rounded-2xl hover:bg-zinc-100 transition-colors">{lang === 'fr' ? 'Voir le CV' : 'View CV'}</a>
                 <button onClick={closePopup} className="flex-1 text-center bg-zinc-50 text-zinc-600 border border-zinc-200 font-mono text-xs uppercase tracking-widest py-5 rounded-2xl hover:bg-zinc-100 transition-colors">
-                  Plus tard
+                  {lang === 'fr' ? 'Plus tard' : 'Later'}
                 </button>
               </div>
             </div>

@@ -8,6 +8,7 @@ import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/components/ThemeProvider';
 import { useLanguage } from '@/components/LanguageProvider';
+import { cvUrl } from '@/data/site';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -88,7 +89,7 @@ export function Navbar() {
             {/* Controls: CV, Lang, Theme */}
             <div className="w-[1px] h-6 bg-zinc-200 dark:bg-zinc-700 mx-2" />
             <a
-              href="/fichiers/CV_Amine_AGNAOU_Alternance_Developpeur_FullStack.pdf"
+              href={cvUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="relative px-4 py-2.5 text-[14px] font-semibold tracking-wide text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors duration-300 rounded-full z-10"
@@ -185,7 +186,7 @@ export function Navbar() {
                 className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800 w-full flex justify-center"
               >
                 <a
-                  href="/fichiers/CV_Amine_AGNAOU_Alternance_Developpeur_FullStack.pdf"
+                  href={cvUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-zinc-950 dark:bg-orange-600 text-white rounded-full font-mono text-xs uppercase tracking-[0.2em] transition-transform hover:scale-105"

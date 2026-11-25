@@ -12,6 +12,7 @@ import { FloatingBadge } from '@/components/FloatingBadge';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { LanguageProvider } from '@/components/LanguageProvider';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { siteUrl } from '@/data/site';
 
 
 const inter = Inter({
@@ -25,17 +26,18 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Amine Agnaou — Développeur Web & Mobile',
-  description: 'Portfolio de Amine Agnaou. Je conçois des expériences digitales sur-mesure, alliant de hautes performances techniques à un design raffiné.',
-  keywords: ['Amine Agnaou', 'Développeur Web', 'Développeur Frontend', 'UX/UI Design', 'Next.js', 'React', 'Portfolio', 'BTS SIO'],
+  metadataBase: new URL(siteUrl),
+  title: 'Amine Agnaou — Développeur logiciel et web en alternance',
+  description: "Portfolio d’Amine Agnaou : développement logiciel et web, API, SQL et automatisation. En recherche d’alternance.",
+  keywords: ['Amine Agnaou', 'Alternance développement logiciel', 'Développeur web', 'PHP', 'Java', 'SQL', 'TypeScript', 'API REST'],
   authors: [{ name: 'Amine Agnaou' }],
   creator: 'Amine Agnaou',
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: 'https://amine-agnaou.com',
-    title: "Amine Agnaou | Développeur Web & Mobile",
-    description: "Portfolio de Amine Agnaou. Conception d'applications web modernes et performantes.",
+    url: siteUrl,
+    title: "Amine Agnaou | Développeur logiciel et web",
+    description: "Portfolio de Amine Agnaou. Projets en développement web, données et automatisation.",
     siteName: 'Amine Agnaou Portfolio',
     images: [
       {
@@ -48,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Amine Agnaou | Développeur Web',
-    description: "Portfolio de Amine Agnaou. Conception d'applications web modernes.",
+    title: 'Amine Agnaou | Développeur logiciel et web',
+    description: "Portfolio et projets de développement logiciel et web d'Amine Agnaou.",
     images: ['/icon.svg'],
   },
   robots: {
@@ -88,13 +90,13 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Amine Agnaou',
-              url: 'https://amine-agnaou.com',
-              jobTitle: 'Développeur Web & Mobile',
+              url: siteUrl,
+              jobTitle: 'Développeur logiciel et web en recherche d’alternance',
               sameAs: [
                 'https://github.com/aminuw',
                 'https://www.linkedin.com/in/amine-agnaou/',
               ],
-              knowsAbout: ['Next.js', 'React', 'TypeScript', 'PHP', 'MySQL', 'UI/UX Design'],
+              knowsAbout: ['Next.js', 'TypeScript', 'PHP', 'Java', 'MySQL', 'API REST'],
             }),
           }}
         />

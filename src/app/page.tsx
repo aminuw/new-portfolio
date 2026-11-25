@@ -8,6 +8,7 @@ import MagneticButton from '@/components/MagneticButton';
 import { ProjectModal } from '@/components/ProjectModal';
 import { useLanguage } from '@/components/LanguageProvider';
 import Image from 'next/image';
+import { cvUrl } from '@/data/site';
 
 export default function Home() {
   const { lang, t } = useLanguage();
@@ -41,7 +42,7 @@ export default function Home() {
               </Link>
             </MagneticButton>
             <MagneticButton>
-              <a href="/fichiers/CV_Amine_AGNAOU_Alternance_Developpeur_FullStack.pdf" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto shrink-0 inline-flex flex-1 items-center justify-center px-8 py-4 bg-transparent border border-zinc-950 dark:border-white text-zinc-950 dark:text-white rounded-full text-sm font-medium tracking-wide hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-300">
+              <a href={cvUrl} target="_blank" rel="noopener noreferrer" className="w-full md:w-auto shrink-0 inline-flex flex-1 items-center justify-center px-8 py-4 bg-transparent border border-zinc-950 dark:border-white text-zinc-950 dark:text-white rounded-full text-sm font-medium tracking-wide hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-300">
                 {t.nav.downloadCv}
               </a>
             </MagneticButton>

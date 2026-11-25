@@ -31,7 +31,7 @@ export default function Projects() {
       return techsLower.some(t => t.includes('php') || t.includes('sql') || t.includes('mysql'));
     }
     if (activeFilter === 'design') {
-      return techsLower.some(t => t.includes('html') || t.includes('css') || t.includes('tailwind') || t.includes('framer'));
+      return techsLower.some(t => t.includes('next.js') || t.includes('php') || t.includes('react'));
     }
     return true;
   });
